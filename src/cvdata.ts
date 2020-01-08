@@ -1,3 +1,9 @@
+/*
+*
+* ADDRESS
+*
+*/
+
 interface AddressRegion {
   fullName: string,
   abbreviation: string,
@@ -36,6 +42,12 @@ export interface CvData {
   name: string,
   address: Address
 }
+
+/*
+*
+* TOPLEVEL
+*
+*/
 
 export const defaultCv: CvData = {
   name: "Ben Lovy",
