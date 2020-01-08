@@ -7,4 +7,4 @@ From the ashes, it rises...deciduously-com 2020.
 * [Stencil](https://www.typescriptlang.org/)
 * [Typescript](https://www.typescriptlang.org/)
 * [Jest](https://jestjs.io/)
-* [Puppetteer](https://pptr.dev/)
+* [Puppeteer](https://pptr.dev/)
