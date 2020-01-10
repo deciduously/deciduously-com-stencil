@@ -1,6 +1,7 @@
 dependencies:
   '@stencil/core': 1.8.3
   '@stencil/router': 1.0.1
+  toml: 3.0.0
 devDependencies:
   '@types/jest': 24.0.25
   '@types/puppeteer': 1.20.3
@@ -3308,6 +3309,10 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-FWtleNAtZ/Ki2qtqej2CXTOayOH9bHDQF+Q48VpWyDXjbYxA4Yz8iDB31zXOBUlOHHKidDbqGVrTUvQMPmBGBw==
+  /toml/3.0.0:
+    dev: false
+    resolution:
+      integrity: sha512-y/mWCZinnvxjTKYhJ+pYxwD0mRLVvOtdS2Awbgxln6iEnt4rk0yBxeSBHkGJcPucRiG0e55mwWp+g/05rsrd6w==
   /tough-cookie/2.4.3:
     dependencies:
       psl: 1.7.0
@@ -3584,3 +3589,4 @@ specifiers:
   jest: 24.9.0
   jest-cli: 24.9.0
   puppeteer: 1.20.0
+  toml: ^3.0.0
