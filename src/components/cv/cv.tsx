@@ -1,5 +1,6 @@
 import { Component, h } from '@stencil/core';
 import { CvData } from '../../cvdata';
+import { CvAddress } from '../cv-address/cv-address';
 
 // TODO this will come from a backend
 const defaultCv: CvData = {
@@ -31,7 +32,7 @@ export class Cv {
       <div>
         <h2>CV</h2>
         <h3>{this.data.name}</h3>
-        <app-cv-address address={this.data.address}></app-cv-address>
+        <CvAddress address={this.data.address} />
       </div>
     );
   }

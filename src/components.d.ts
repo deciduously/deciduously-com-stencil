@@ -8,17 +8,11 @@
 
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import {
-  Address,
-} from './cvdata';
-import {
   MatchResults,
 } from '@stencil/router';
 
 export namespace Components {
   interface AppCv {}
-  interface AppCvAddress {
-    'address': Address;
-  }
   interface AppHome {}
   interface AppProfile {
     'match': MatchResults;
@@ -33,12 +27,6 @@ declare global {
   var HTMLAppCvElement: {
     prototype: HTMLAppCvElement;
     new (): HTMLAppCvElement;
-  };
-
-  interface HTMLAppCvAddressElement extends Components.AppCvAddress, HTMLStencilElement {}
-  var HTMLAppCvAddressElement: {
-    prototype: HTMLAppCvAddressElement;
-    new (): HTMLAppCvAddressElement;
   };
 
   interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {}
@@ -60,7 +48,6 @@ declare global {
   };
   interface HTMLElementTagNameMap {
     'app-cv': HTMLAppCvElement;
-    'app-cv-address': HTMLAppCvAddressElement;
     'app-home': HTMLAppHomeElement;
     'app-profile': HTMLAppProfileElement;
     'app-root': HTMLAppRootElement;
@@ -69,9 +56,6 @@ declare global {
 
 declare namespace LocalJSX {
   interface AppCv {}
-  interface AppCvAddress {
-    'address'?: Address;
-  }
   interface AppHome {}
   interface AppProfile {
     'match'?: MatchResults;
@@ -80,7 +64,6 @@ declare namespace LocalJSX {
 
   interface IntrinsicElements {
     'app-cv': AppCv;
-    'app-cv-address': AppCvAddress;
     'app-home': AppHome;
     'app-profile': AppProfile;
     'app-root': AppRoot;
@@ -94,7 +77,6 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'app-cv': LocalJSX.AppCv & JSXBase.HTMLAttributes<HTMLAppCvElement>;
-      'app-cv-address': LocalJSX.AppCvAddress & JSXBase.HTMLAttributes<HTMLAppCvAddressElement>;
       'app-home': LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
       'app-profile': LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
       'app-root': LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
