@@ -1,23 +1,17 @@
-/*
-*
-* ADDRESS
-*
-*/
-
-interface AddressRegion {
+export interface AddressRegion {
   fullName: string,
   abbreviation: string,
   country: string,
 }
 
-interface Locality {
+export interface Locality {
   name: string,
   state: AddressRegion,
   postalCode: string,
 }
 
 export interface Address {
-  street: string,
+  street?: string,
   locality: Locality
 }
 
@@ -29,11 +23,82 @@ export interface Header {
   links: string[],
 }
 
-export interface CvData {
-  header: Header,
-  address: Address
+export interface Intro {
+  oneLiner: string,
+  about: string,
+  skills: string,
+  techs: string,
 }
 
-/*
-*
-*/
+interface DegreeType {
+  abbreviation: string,
+  fullName: string,
+  subject: string,
+}
+
+export enum Month {
+  Jan,
+  Feb,
+  Mar,
+  Apr,
+  May,
+  Jun,
+  Jul,
+  Aug,
+  Sep,
+  Oct,
+  Nov,
+  Dec
+}
+
+interface MonthYear {
+  year: number,
+  month: Month,
+}
+
+interface GraduationDate {
+  date: MonthYear,
+  expected: boolean,
+}
+
+interface Degree {
+  type: DegreeType,
+  graduationDate: GraduationDate,
+  gpa: number,
+}
+
+interface SchoolEntry {
+  name: string,
+  address: Address,
+  degrees: Degree[];
+}
+
+export interface Education {
+  schools: SchoolEntry[],
+}
+
+interface Project {
+  name: string,
+  synopsis: string
+}
+
+
+// TODO encode that there is EITHER an endDate or its current?
+interface Employment {
+  title: string,
+  employer: string,
+  beginDate: MonthYear,
+  endDate?: MonthYear,
+  current: boolean,
+  address: Address,
+  bullets: string[],
+}
+
+export interface CvData {
+  header: Header,
+  intro: Intro,
+  education: Education,
+  projects: Project[],
+  employment: Employment[],
+  address: Address
+}

@@ -7,9 +7,17 @@ interface AddressProps {
   address: Address
 }
 
-export const CvAddress: FunctionalComponent<AddressProps> = ({address}) => (
+const street = function (address: Address) {
+  if (address.street) {
+    return <slot><span itemprop="streetAddress">{address.street}</span><br /></slot>;
+  } else {
+    return <slot></slot>
+  }
+}
+
+export const CvAddress: FunctionalComponent<AddressProps> = ({ address }) => (
   <p itemscope itemtype="https://schema.org/PostalAddress" id="address">
-    <span itemprop="streetAddress">{address.street}</span><br />
+    {street}
     <span itemprop="addressLocality">{address.locality.name}</span>, <abbr title={address.locality.state.fullName} itemprop="addressRegion">{address.locality.state.abbreviation}</abbr> <span itemprop="postalCode">{address.locality.postalCode}</span><br />
     <span itemprop="addressCountry">{address.locality.state.country}</span>
   </p>
