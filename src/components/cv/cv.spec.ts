@@ -10,8 +10,8 @@ describe('app-cv', () => {
     expect(component.data).toBeTruthy();
   })
 
-  it('has my name in it', () => {
+  it('has my CV in it', () => {
     const component = new Cv();
-    expect(component.data.name).toEqual('Ben Lovy');
+    expect(component.data.header.subtitle).toEqual('Software Developer');
   })
 });
