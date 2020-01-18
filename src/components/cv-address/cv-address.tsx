@@ -17,7 +17,7 @@ const street = function (address: Address) {
 
 export const CvAddress: FunctionalComponent<AddressProps> = ({ address }) => (
   <section itemscope itemtype="https://schema.org/PostalAddress" id="address">
-    {street}
+    {street(address)}
     <span itemprop="addressLocality">{address.locality.name}</span>, <abbr title={address.locality.state.fullName} itemprop="addressRegion">{address.locality.state.abbreviation}</abbr> <span itemprop="postalCode">{address.locality.postalCode}</span><br />
     <span itemprop="addressCountry">{address.locality.state.country}</span>
   </section>

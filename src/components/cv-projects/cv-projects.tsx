@@ -6,5 +6,12 @@ interface ProjectsProps {
 }
 
 export const CvProjects: FunctionalComponent<ProjectsProps> = ({ projects }) => (
-  <slot></slot>
+  <section>
+    {projects.map(p => {
+      return <div class="project">
+        <span class="project-title">{p.name}</span>
+        <p>{p.synopsis}</p>
+      </div>
+    })}
+  </section>
 );
