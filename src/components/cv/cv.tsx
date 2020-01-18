@@ -3,6 +3,9 @@ import { CvData, AddressRegion, Month, Locality, Address } from '../../cvdata';
 import { CvAddress } from '../cv-address/cv-address';
 import { CvHeader } from '../cv-header/cv-header';
 import { CvIntro } from '../cv-intro/cv-intro';
+import { CvEducation } from '../cv-education/cv-education';
+import { CvEmployment } from '../cv-employment/cv-employment';
+import { CvProjects } from '../cv-projects/cv-projects';
 
 // TODO ability to toggle on/off Address
 // TODO different "modes"?
@@ -219,11 +222,14 @@ export class Cv {
 
   render() {
     return (
-      <div>
+      <main>
         <CvHeader header={this.data.header} />
         <CvAddress address={this.data.address} />
         <CvIntro intro={this.data.intro} />
-      </div>
+        <CvEducation education={this.data.education} />
+        <CvEmployment employment={this.data.employment} />
+        <CvProjects projects ={this.data.projects} />
+      </main>
     );
   }
 }

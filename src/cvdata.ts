@@ -77,14 +77,14 @@ export interface Education {
   schools: SchoolEntry[],
 }
 
-interface Project {
+export interface Project {
   name: string,
   synopsis: string
 }
 
 
 // TODO encode that there is EITHER an endDate or its current?
-interface Employment {
+export interface Employment {
   title: string,
   employer: string,
   beginDate: MonthYear,

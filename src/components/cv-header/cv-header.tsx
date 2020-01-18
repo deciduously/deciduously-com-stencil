@@ -6,11 +6,11 @@ interface HeaderProps {
 }
 
 export const CvHeader: FunctionalComponent<HeaderProps> = ({ header }) => (
-  <p itemscope itemtype="https://schema.org/Person" id="cv-header">
+  <section itemscope itemtype="https://schema.org/Person" id="cv-header">
     <span itemprop="givenName">{header.firstName}</span> <span itemprop="familyName">{header.lastName}</span><br />
     <span itemprop="jobTitle" id="subtitle">{header.subtitle}</span><br />
     | <a href={'mailto:' + header.email} itemprop="email">{header.email}</a> | {
       header.links.map(l => { return <span><a target="blank" href={l} itemprop="url">{l}</a> | </span> })
     }
-  </p>
+  </section>
 );
