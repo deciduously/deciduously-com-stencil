@@ -1,10 +1,21 @@
 import { Component, h } from '@stencil/core';
 import { CvData } from '../../cvdata';
 import { CvAddress } from '../cv-address/cv-address';
+import { CvHeader } from '../cv-header/cv-header';
 
-// TODO this will come from a backend
+// TODO this will come from a backend?
 const defaultCv: CvData = {
-  name: "Ben Lovy",
+  header: {
+    firstName: "Ben",
+    lastName: "Lovy",
+    email: "bendlovy@gmail.com",
+    subtitle: "Software Developer",
+    links: [
+      "https://github.com/deciduously",
+      "https://dev.to/deciduously",
+      "https://www.linkedin.com/in/benlovy/"
+    ]
+  },
   address: {
     street: "37 Capitol St",
     locality: {
@@ -30,8 +41,7 @@ export class Cv {
   render() {
     return (
       <div>
-        <h2>CV</h2>
-        <h3>{this.data.name}</h3>
+        <CvHeader header={this.data.header} />
         <CvAddress address={this.data.address} />
       </div>
     );

@@ -21,7 +21,19 @@ export interface Address {
   locality: Locality
 }
 
+export interface Header {
+  firstName: string,
+  lastName: string,
+  email: string,
+  subtitle: string,
+  links: string[],
+}
+
 export interface CvData {
-  name: string,
+  header: Header,
   address: Address
 }
+
+/*
+*
+*/
