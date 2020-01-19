@@ -19,8 +19,21 @@
     <link rel="apple-touch-icon" href="/assets/icon/icon.png" />
     <link rel="icon" type="image/x-icon" href="/assets/icon/favicon.ico" />
     <link rel="manifest" href="/manifest.json" />
+
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
     <app-root></app-root>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on('init', user => {
+          if (!user) {
+            window.netlifyIdentity.on('login', () => {
+              document.location.href = '/admin/';
+            });
+          }
+        });
+      }
+    </script>
   </body>
 </html>

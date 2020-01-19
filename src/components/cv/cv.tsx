@@ -31,18 +31,17 @@ const defaultCv: CvData = {
     links: [
       {
         name: 'GitHub',
-        imageUrl:
-          'https://maxcdn.icons8.com/Share/icon/p1em/Logos/github1600.png',
+        imageUrl: 'images/github.png',
         target: 'https://github.com/deciduously'
       },
       {
         name: 'DEV.to',
-        imageUrl: 'https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg',
+        imageUrl: 'images/dev-badge.svg',
         target: 'https://dev.to/deciduously'
       },
       {
         name: 'LinkedIn',
-        imageUrl: 'https://image.flaticon.com/icons/png/512/174/174857.png',
+        imageUrl: 'images/768-Linkedin_icon.svg.png',
         target: 'https://www.linkedin.com/in/benlovy/'
       }
     ]
