@@ -11,17 +11,16 @@ export class CvProjects {
   @Prop() projects: Project[];
   render() {
     return (
-      <section>
-        <span class="section-header">Projects</span>
+      <cv-section name="Projects">
         {this.projects.map(p => {
           return (
-            <div class="project">
+            <section class="project">
               <span class="project-title">{p.name}</span>
               <p>{p.synopsis}</p>
-            </div>
+            </section>
           );
         })}
-      </section>
+      </cv-section>
     );
   }
 }

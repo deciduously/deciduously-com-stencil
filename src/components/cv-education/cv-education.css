@@ -1,3 +1,7 @@
-:host {
-  display: block;
+ul {
+  @apply list-none;
+}
+
+.ed-address {
+  @apply text-sm;
 }

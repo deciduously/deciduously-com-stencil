@@ -1,0 +1,11 @@
+.date {
+  @apply text-sm;
+}
+
+.month {
+  @apply italic;
+}
+
+.year {
+  @apply font-bold;
+}

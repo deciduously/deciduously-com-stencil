@@ -8,7 +8,7 @@ export class AppRoot {
   render() {
     return (
       <div>
-        <header>
+        <header class="home">
           <stencil-route-link url="/">
             <h1>deciduously.com</h1>
           </stencil-route-link>

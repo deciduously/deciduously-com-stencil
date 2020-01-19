@@ -1,3 +1,7 @@
 .subtitle {
   @apply italic;
 }
+
+.name {
+  @apply text-2xl font-extrabold;
+}

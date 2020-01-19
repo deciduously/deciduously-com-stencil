@@ -1,3 +1,5 @@
+// Address
+
 export interface AddressRegion {
   fullName: string;
   abbreviation: string;
@@ -15,13 +17,23 @@ export interface Address {
   locality: Locality;
 }
 
+// Header
+
+export interface CvImageLink {
+  imageUrl: string;
+  name: string;
+  target: string;
+}
+
 export interface Header {
   firstName: string;
   lastName: string;
   email: string;
   subtitle: string;
-  links: string[];
+  links: CvImageLink[];
 }
+
+// Intro
 
 export interface Intro {
   oneLiner: string;
@@ -30,11 +42,7 @@ export interface Intro {
   techs: string;
 }
 
-interface DegreeType {
-  abbreviation: string;
-  fullName: string;
-  subject: string;
-}
+// Date
 
 export enum Month {
   Jan = 1,
@@ -51,7 +59,7 @@ export enum Month {
   Dec
 }
 
-interface MonthYear {
+export interface MonthYear {
   year: number;
   month: Month;
 }
@@ -61,11 +69,21 @@ export interface GraduationDate {
   expected: boolean;
 }
 
+// Degree
+
+interface DegreeType {
+  abbreviation: string;
+  fullName: string;
+  subject: string;
+}
+
 interface Degree {
   type: DegreeType;
   graduationDate: GraduationDate;
   gpa: number;
 }
+
+// School
 
 export interface SchoolEntry {
   name: string;
@@ -73,10 +91,14 @@ export interface SchoolEntry {
   degrees: Degree[];
 }
 
+// Project
+
 export interface Project {
   name: string;
   synopsis: string;
 }
+
+// Employment
 
 // TODO encode that there is EITHER an endDate or its current?
 export interface Employment {
@@ -88,6 +110,8 @@ export interface Employment {
   address: Address;
   bullets: string[];
 }
+
+// Toplevel CvData
 
 export interface CvData {
   header: Header;
