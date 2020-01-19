@@ -46,8 +46,7 @@ const defaultCv: CvData = {
     skills: "Quick and eager to internalize new concepts, highly motivated and resourceful self-learner. Creative problem-solver, fully leveraging available tools and resources where applicable. Thrives in fast-paced, high-intensity environments without sacrificing attention to detail. Effective, diplomatic communicator in difficult or delicate situations.",
     techs: "Familiar and comfortable working with a range of languages including C++, JavaScript, TypeScript, Python, Clojure, and Rust, as well as Familiar with modern ecosystem tools such as Git/GitHub, TravisCI, GraphQL vs RESTful API design, test-driven development."
   },
-  education: {
-    schools: [
+  education: [
       {
         name: "Champlain College",
         address: {
@@ -94,8 +93,7 @@ const defaultCv: CvData = {
           }
         ]
       }
-    ]
-  },
+    ],
   projects: [
     {
       name: "Mifkad",
@@ -212,6 +210,8 @@ const defaultCv: CvData = {
   }
 }
 
+// TODO higher-order component for Sections?
+
 @Component({
   tag: 'app-cv',
   styleUrl: 'cv.css',
@@ -226,7 +226,7 @@ export class Cv {
         <CvHeader header={this.data.header} />
         <CvAddress address={this.data.address} />
         <CvIntro intro={this.data.intro} />
-        <CvEducation education={this.data.education} />
+        <CvEducation schools={this.data.education} />
         <CvEmployment employment={this.data.employment} />
         <CvProjects projects ={this.data.projects} />
       </main>

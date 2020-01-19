@@ -2,12 +2,13 @@ import { FunctionalComponent, h } from '@stencil/core';
 import { Intro } from '../../cvdata';
 
 interface IntroProps {
-  intro: Intro
+  intro: Intro;
 }
 
 export const CvIntro: FunctionalComponent<IntroProps> = ({ intro }) => (
   <section id="cv-intro">
-    <span id="one-liner">{intro.oneLiner}</span><br />
+    <span id="one-liner">{intro.oneLiner}</span>
+    <br />
     <span class="intro-heading">About</span>
     <p class="intro-section">{intro.about}</p>
     <span class="intro-heading">Skills</span>
