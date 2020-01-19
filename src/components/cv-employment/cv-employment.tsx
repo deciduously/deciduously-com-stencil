@@ -1,5 +1,6 @@
 import { FunctionalComponent, h } from '@stencil/core';
 import { Employment, Month } from '../../cvdata';
+import { CvAddress } from '../cv-address/cv-address';
 
 interface EmploymentProps {
   employment: Employment[];
@@ -30,10 +31,10 @@ export const CvEmployment: FunctionalComponent<EmploymentProps> = ({
         <section>
           <span class="emp-title">{e.title}</span> -{' '}
           <span class="emp-employer">{e.employer}</span>{' '}
-          <span class="emp-employer-address">{e.address}</span>
+          <CvAddress address={e.address} />
           <br />
           {Month[e.beginDate.month]} {e.beginDate.year} - {endDate(e)}
-          <br /> {/* TODO current or end date*/}
+          <br />
           <ul>
             {e.bullets.map(b => {
               return <li class="emp-bullet">{b}</li>;
