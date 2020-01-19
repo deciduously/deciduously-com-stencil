@@ -1,14 +1,10 @@
-import { FunctionalComponent, h } from '@stencil/core';
+import { Component, Prop, h } from '@stencil/core';
 import { Address } from '../../cvdata';
 
 /* https://stackoverflow.com/questions/26188003/markup-for-postal-addresses */
 
-interface AddressProps {
-  address: Address;
-}
-
 const street = function(address: Address) {
-  if (address.street) {
+  if (address.street != null) {
     return (
       <slot>
         <span itemprop="streetAddress">{address.street}</span>
@@ -19,15 +15,38 @@ const street = function(address: Address) {
   }
 };
 
-export const CvAddress: FunctionalComponent<AddressProps> = ({ address }) => (
-  <section itemscope itemtype="https://schema.org/PostalAddress" id="address">
-    {street(address)}
-    <span itemprop="addressLocality">{address.locality.name}</span>,{' '}
-    <abbr title={address.locality.state.fullName} itemprop="addressRegion">
-      {address.locality.state.abbreviation}
-    </abbr>{' '}
-    <span itemprop="postalCode">{address.locality.postalCode}</span>
-    <br />
-    <span itemprop="addressCountry">{address.locality.state.country}</span>
-  </section>
-);
+@Component({
+  tag: 'cv-address',
+  styleUrl: 'cv-address.css',
+  shadow: true
+})
+export class AppRoot {
+  /** Address object */
+  @Prop() address: Address;
+
+  render() {
+    return (
+      <section
+        itemscope
+        itemtype="https://schema.org/PostalAddress"
+        id="address"
+      >
+        {street(this.address)}
+        <span itemprop="addressLocality">
+          {this.address.locality.name}
+        </span>,{' '}
+        <abbr
+          title={this.address.locality.state.fullName}
+          itemprop="addressRegion"
+        >
+          {this.address.locality.state.abbreviation}
+        </abbr>{' '}
+        <span itemprop="postalCode">{this.address.locality.postalCode}</span>
+        <br />
+        <span itemprop="addressCountry">
+          {this.address.locality.state.country}
+        </span>
+      </section>
+    );
+  }
+}

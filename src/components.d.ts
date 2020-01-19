@@ -8,16 +8,60 @@
 
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import {
-  MatchResults,
-} from '@stencil/router';
+  Address,
+  CvData,
+  Employment,
+  Header,
+  Intro,
+  Project,
+  SchoolEntry,
+} from './cvdata';
 
 export namespace Components {
-  interface AppCv {}
-  interface AppHome {}
-  interface AppProfile {
-    'match': MatchResults;
+  interface AppCv {
+    /**
+    * Resume data object
+    */
+    'data': CvData;
   }
+  interface AppHome {}
   interface AppRoot {}
+  interface CvAddress {
+    /**
+    * Address object
+    */
+    'address': Address;
+  }
+  interface CvEducation {
+    /**
+    * Schools list
+    */
+    'schools': SchoolEntry[];
+  }
+  interface CvEmployment {
+    /**
+    * Employment array
+    */
+    'employment': Employment[];
+  }
+  interface CvHeader {
+    /**
+    * Header data
+    */
+    'header': Header;
+  }
+  interface CvIntro {
+    /**
+    * Intro object
+    */
+    'intro': Intro;
+  }
+  interface CvProjects {
+    /**
+    * Projects list
+    */
+    'projects': Project[];
+  }
 }
 
 declare global {
@@ -35,38 +79,116 @@ declare global {
     new (): HTMLAppHomeElement;
   };
 
-  interface HTMLAppProfileElement extends Components.AppProfile, HTMLStencilElement {}
-  var HTMLAppProfileElement: {
-    prototype: HTMLAppProfileElement;
-    new (): HTMLAppProfileElement;
-  };
-
   interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {}
   var HTMLAppRootElement: {
     prototype: HTMLAppRootElement;
     new (): HTMLAppRootElement;
   };
+
+  interface HTMLCvAddressElement extends Components.CvAddress, HTMLStencilElement {}
+  var HTMLCvAddressElement: {
+    prototype: HTMLCvAddressElement;
+    new (): HTMLCvAddressElement;
+  };
+
+  interface HTMLCvEducationElement extends Components.CvEducation, HTMLStencilElement {}
+  var HTMLCvEducationElement: {
+    prototype: HTMLCvEducationElement;
+    new (): HTMLCvEducationElement;
+  };
+
+  interface HTMLCvEmploymentElement extends Components.CvEmployment, HTMLStencilElement {}
+  var HTMLCvEmploymentElement: {
+    prototype: HTMLCvEmploymentElement;
+    new (): HTMLCvEmploymentElement;
+  };
+
+  interface HTMLCvHeaderElement extends Components.CvHeader, HTMLStencilElement {}
+  var HTMLCvHeaderElement: {
+    prototype: HTMLCvHeaderElement;
+    new (): HTMLCvHeaderElement;
+  };
+
+  interface HTMLCvIntroElement extends Components.CvIntro, HTMLStencilElement {}
+  var HTMLCvIntroElement: {
+    prototype: HTMLCvIntroElement;
+    new (): HTMLCvIntroElement;
+  };
+
+  interface HTMLCvProjectsElement extends Components.CvProjects, HTMLStencilElement {}
+  var HTMLCvProjectsElement: {
+    prototype: HTMLCvProjectsElement;
+    new (): HTMLCvProjectsElement;
+  };
   interface HTMLElementTagNameMap {
     'app-cv': HTMLAppCvElement;
     'app-home': HTMLAppHomeElement;
-    'app-profile': HTMLAppProfileElement;
     'app-root': HTMLAppRootElement;
+    'cv-address': HTMLCvAddressElement;
+    'cv-education': HTMLCvEducationElement;
+    'cv-employment': HTMLCvEmploymentElement;
+    'cv-header': HTMLCvHeaderElement;
+    'cv-intro': HTMLCvIntroElement;
+    'cv-projects': HTMLCvProjectsElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface AppCv {}
-  interface AppHome {}
-  interface AppProfile {
-    'match'?: MatchResults;
+  interface AppCv {
+    /**
+    * Resume data object
+    */
+    'data'?: CvData;
   }
+  interface AppHome {}
   interface AppRoot {}
+  interface CvAddress {
+    /**
+    * Address object
+    */
+    'address'?: Address;
+  }
+  interface CvEducation {
+    /**
+    * Schools list
+    */
+    'schools'?: SchoolEntry[];
+  }
+  interface CvEmployment {
+    /**
+    * Employment array
+    */
+    'employment'?: Employment[];
+  }
+  interface CvHeader {
+    /**
+    * Header data
+    */
+    'header'?: Header;
+  }
+  interface CvIntro {
+    /**
+    * Intro object
+    */
+    'intro'?: Intro;
+  }
+  interface CvProjects {
+    /**
+    * Projects list
+    */
+    'projects'?: Project[];
+  }
 
   interface IntrinsicElements {
     'app-cv': AppCv;
     'app-home': AppHome;
-    'app-profile': AppProfile;
     'app-root': AppRoot;
+    'cv-address': CvAddress;
+    'cv-education': CvEducation;
+    'cv-employment': CvEmployment;
+    'cv-header': CvHeader;
+    'cv-intro': CvIntro;
+    'cv-projects': CvProjects;
   }
 }
 
@@ -78,8 +200,13 @@ declare module "@stencil/core" {
     interface IntrinsicElements {
       'app-cv': LocalJSX.AppCv & JSXBase.HTMLAttributes<HTMLAppCvElement>;
       'app-home': LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
-      'app-profile': LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
       'app-root': LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+      'cv-address': LocalJSX.CvAddress & JSXBase.HTMLAttributes<HTMLCvAddressElement>;
+      'cv-education': LocalJSX.CvEducation & JSXBase.HTMLAttributes<HTMLCvEducationElement>;
+      'cv-employment': LocalJSX.CvEmployment & JSXBase.HTMLAttributes<HTMLCvEmploymentElement>;
+      'cv-header': LocalJSX.CvHeader & JSXBase.HTMLAttributes<HTMLCvHeaderElement>;
+      'cv-intro': LocalJSX.CvIntro & JSXBase.HTMLAttributes<HTMLCvIntroElement>;
+      'cv-projects': LocalJSX.CvProjects & JSXBase.HTMLAttributes<HTMLCvProjectsElement>;
     }
   }
 }
