@@ -22,7 +22,6 @@ devDependencies:
   eslint-config-prettier: 6.9.0_eslint@6.8.0
   jest: 24.9.0
   jest-cli: 24.9.0
-  lit-html: 1.1.2
   npm-run-all: 4.1.5
   prettier: 1.19.1
   puppeteer: 1.20.0
@@ -3830,9 +3829,6 @@ packages:
       node: '>=6'
     peerDependencies:
       jest-resolve: '*'
-    peerDependenciesMeta:
-      jest-resolve:
-        optional: true
     resolution:
       integrity: sha512-pgFw2tm54fzgYvc/OHrnysABEObZCUNFnhjoRjaVOCN8NYc032/gVjPaHD4Aq6ApkSieWtfKAFQtmDKAmhupnQ==
   /jest-regex-util/24.9.0:
@@ -4213,10 +4209,6 @@ packages:
   /lines-and-columns/1.1.6:
     resolution:
       integrity: sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
-  /lit-html/1.1.2:
-    dev: true
-    resolution:
-      integrity: sha512-FFlUMKHKi+qG1x1iHNZ1hrtc/zHmfYTyrSvs3/wBTvaNtpZjOZGWzU7efGYVpgp6KvWeKF6ql9/KsCq6Z/mEDA==
   /load-json-file/4.0.0:
     dependencies:
       graceful-fs: 4.2.3
@@ -8620,7 +8612,6 @@ specifiers:
   eslint-plugin-react: ^7.18.0
   jest: 24.9.0
   jest-cli: 24.9.0
-  lit-html: ^1.1.2
   netlify-cms: ^2.10.8
   npm-run-all: ^4.1.5
   prettier: ^1.19.1
