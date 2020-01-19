@@ -31,17 +31,17 @@ const defaultCv: CvData = {
     links: [
       {
         name: 'GitHub',
-        imageUrl: 'images/github.png',
+        imageUrl: 'images/uploads/github.png',
         target: 'https://github.com/deciduously'
       },
       {
         name: 'DEV.to',
-        imageUrl: 'images/dev-badge.svg',
+        imageUrl: 'images/uploads/dev-badge.svg',
         target: 'https://dev.to/deciduously'
       },
       {
         name: 'LinkedIn',
-        imageUrl: 'images/768-Linkedin_icon.svg.png',
+        imageUrl: 'images/uploads/768-Linkedin_icon.svg.png',
         target: 'https://www.linkedin.com/in/benlovy/'
       }
     ]
@@ -225,6 +225,7 @@ const defaultCv: CvData = {
 
 @Component({
   tag: 'app-cv',
+  styleUrl: 'cv.css',
   shadow: true
 })
 export class Cv {
