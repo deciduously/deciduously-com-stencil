@@ -9,11 +9,13 @@ export class CvSection {
   /** Section name in bold */
   @Prop() name: string;
   render() {
-    return (
-      <section>
-        <span class="section-header">{this.name}</span>
-        <slot />
-      </section>
-    );
+    if (this.name !== undefined) {
+      return (
+        <section>
+          <span class="section-header">{this.name}</span>
+          <slot />
+        </section>
+      );
+    }
   }
 }

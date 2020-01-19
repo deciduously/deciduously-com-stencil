@@ -31,17 +31,17 @@ const defaultCv: CvData = {
     links: [
       {
         name: 'GitHub',
-        imageUrl: 'images/uploads/github.png',
+        imageUrl: 'assets/images/github.png',
         target: 'https://github.com/deciduously'
       },
       {
         name: 'DEV.to',
-        imageUrl: 'images/uploads/dev-badge.svg',
+        imageUrl: 'assets/images/dev-badge.svg',
         target: 'https://dev.to/deciduously'
       },
       {
         name: 'LinkedIn',
-        imageUrl: 'images/uploads/768-Linkedin_icon.svg.png',
+        imageUrl: 'assets/images/768px-Linkedin_icon.svg.png',
         target: 'https://www.linkedin.com/in/benlovy/'
       }
     ]
@@ -233,15 +233,17 @@ export class Cv {
   @Prop() data: CvData = defaultCv;
 
   render() {
-    return (
-      <main class="cv">
-        <cv-header class="cv-section" header={this.data.header} />
-        <cv-address class="cv-section" address={this.data.address} />
-        <cv-intro class="cv-section" intro={this.data.intro} />
-        <cv-education class="cv-section" schools={this.data.education} />
-        <cv-employment class="cv-section" employment={this.data.employment} />
-        <cv-projects class="cv-section" projects={this.data.projects} />
-      </main>
-    );
+    if (this.data !== undefined) {
+      return (
+        <main class="cv">
+          <cv-header class="cv-section" header={this.data.header} />
+          <cv-address class="cv-section" address={this.data.address} />
+          <cv-intro class="cv-section" intro={this.data.intro} />
+          <cv-education class="cv-section" schools={this.data.education} />
+          <cv-employment class="cv-section" employment={this.data.employment} />
+          <cv-projects class="cv-section" projects={this.data.projects} />
+        </main>
+      );
+    }
   }
 }
