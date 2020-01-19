@@ -10,9 +10,9 @@ devDependencies:
   '@stencil/postcss': 1.0.1_@stencil+core@1.8.5
   '@types/autoprefixer': 9.6.1
   '@types/cssnano': 4.0.0
-  '@types/jest': 24.9.0
+  '@types/jest': 24.0.25
   '@types/prettier': 1.19.0
-  '@types/puppeteer': 2.0.0
+  '@types/puppeteer': 1.20.3
   '@types/stylelint': 9.10.1
   '@typescript-eslint/eslint-plugin': 2.16.0_06dd01ff8bc3edf7e85377823fd48c83
   '@typescript-eslint/parser': 2.16.0_eslint@6.8.0+typescript@3.7.5
@@ -25,7 +25,7 @@ devDependencies:
   lit-html: 1.1.2
   npm-run-all: 4.1.5
   prettier: 1.19.1
-  puppeteer: 2.0.0
+  puppeteer: 1.20.0
   strict-tslint-config: 1.0.1_tslint@5.20.1
   stylelint: 13.0.0
   stylelint-config-standard: 19.0.0_stylelint@13.0.0
@@ -635,12 +635,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-UpYjBi8xefVChsCoBpKShdxTllC9pwISirfoZsUa2AAdQg/Jd2KQGtSbw+ya7GPo7x/wAPlH6JBhKhAsXUEZNA==
-  /@types/jest/24.9.0:
+  /@types/jest/24.0.25:
     dependencies:
       jest-diff: 24.9.0
     dev: true
     resolution:
-      integrity: sha512-dXvuABY9nM1xgsXlOtLQXJKdacxZJd7AtvLsKZ/0b57ruMXDKCOXAC/M75GbllQX6o1pcZ5hAG4JzYy7Z/wM2w==
+      integrity: sha512-hnP1WpjN4KbGEK4dLayul6lgtys6FPz0UfxMeMQCv0M+sTnzN3ConfiO72jHgLxl119guHgI8gLqDOrRLsyp2g==
   /@types/json-schema/7.0.4:
     dev: true
     resolution:
@@ -667,12 +667,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-KfRL3PuHmqQLOG+2tGpRO26Ctg+Cq1E01D2DMriKEATHgWLfeNDmq9e29Q9WIky0dQ3NPkd1mzYH8Lm936Z9qw==
-  /@types/puppeteer/2.0.0:
+  /@types/puppeteer/1.20.3:
     dependencies:
       '@types/node': 13.1.8
     dev: true
     resolution:
-      integrity: sha512-QPHXIcaPcijMbvizoM7PRL97Rm+aM8J2DmgTz2tt79b15PqbyeaCppYonvPLHQ/Q5ea92BUHDpv4bsqtiTy8kQ==
+      integrity: sha512-U1H7E4wHDsPe2s7wa2fpUD4kPYmu3n4hYRmlFK4WgKQxXE1ctY2h9Exely8GXs7743gLvrnzuX7aJuyG0SEMIQ==
   /@types/q/1.5.2:
     dev: true
     resolution:
@@ -3114,7 +3114,7 @@ packages:
       npm: '>=1.3.7'
     resolution:
       integrity: sha1-muzZJRFHcvPZW2WmCruPfBj7rOE=
-  /https-proxy-agent/3.0.1:
+  /https-proxy-agent/2.2.4:
     dependencies:
       agent-base: 4.3.0
       debug: 3.2.6
@@ -3122,7 +3122,7 @@ packages:
     engines:
       node: '>= 4.5.0'
     resolution:
-      integrity: sha512-+ML2Rbh6DAuee7d07tYGEKOEi2voWPUGan+ExdPbPW6Z3svq+JCqr0v8WmKPOkz1vOVykPCBSuobe7G8GJUtVg==
+      integrity: sha512-OmvfoQ53WLjtA9HeYP9RNrWMJzzAz1JGaSFr1nijg0PVR1JaD/xbJq1mdEIIlxGpXp9eSe/O2LgU9DJmTPd0Eg==
   /iconv-lite/0.4.24:
     dependencies:
       safer-buffer: 2.1.2
@@ -3830,6 +3830,9 @@ packages:
       node: '>=6'
     peerDependencies:
       jest-resolve: '*'
+    peerDependenciesMeta:
+      jest-resolve:
+        optional: true
     resolution:
       integrity: sha512-pgFw2tm54fzgYvc/OHrnysABEObZCUNFnhjoRjaVOCN8NYc032/gVjPaHD4Aq6ApkSieWtfKAFQtmDKAmhupnQ==
   /jest-regex-util/24.9.0:
@@ -6260,11 +6263,11 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
-  /puppeteer/2.0.0:
+  /puppeteer/1.20.0:
     dependencies:
       debug: 4.1.1
       extract-zip: 1.6.7
-      https-proxy-agent: 3.0.1
+      https-proxy-agent: 2.2.4
       mime: 2.4.4
       progress: 2.0.3
       proxy-from-env: 1.0.0
@@ -6272,10 +6275,10 @@ packages:
       ws: 6.2.1
     dev: true
     engines:
-      node: '>=8.16.0'
+      node: '>=6.4.0'
     requiresBuild: true
     resolution:
-      integrity: sha512-t3MmTWzQxPRP71teU6l0jX47PHXlc4Z52sQv4LJQSZLq1ttkKS2yGM3gaI57uQwZkNaoGd0+HPPMELZkcyhlqA==
+      integrity: sha512-bt48RDBy2eIwZPrkgbcwHtb51mj2nKvHOPMaSH2IsWiv7lOG9k9zhaRzpDZafrk05ajMc3cu+lSQYYOfH2DkVQ==
   /purgecss/2.0.3:
     dependencies:
       commander: 4.1.0
@@ -8604,9 +8607,9 @@ specifiers:
   '@stencil/router': ^1.0.1
   '@types/autoprefixer': ^9.6.1
   '@types/cssnano': ^4.0.0
-  '@types/jest': 24.9.0
+  '@types/jest': 24.0.25
   '@types/prettier': ^1.19.0
-  '@types/puppeteer': 2.0.0
+  '@types/puppeteer': 1.20.3
   '@types/stylelint': ^9.10.1
   '@typescript-eslint/eslint-plugin': ^2.16.0
   '@typescript-eslint/parser': ^2.16.0
@@ -8621,7 +8624,7 @@ specifiers:
   netlify-cms: ^2.10.8
   npm-run-all: ^4.1.5
   prettier: ^1.19.1
-  puppeteer: 2.0.0
+  puppeteer: 1.20.0
   strict-tslint-config: ^1.0.1
   stylelint: ^13.0.0
   stylelint-config-standard: ^19.0.0
