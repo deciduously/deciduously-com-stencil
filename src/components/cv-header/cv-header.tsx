@@ -12,26 +12,20 @@ export class CvHeader {
   render() {
     return (
       <section itemscope itemtype="https://schema.org/Person">
-        <span itemprop="givenName">{this.header.firstName}</span>{' '}
-        <span itemprop="familyName">{this.header.lastName}</span>
+        <span class="name">
+          <span itemprop="givenName">{this.header.firstName}</span>{' '}
+          <span itemprop="familyName">{this.header.lastName}</span>
+        </span>
         <br />
         <span itemprop="jobTitle" class="subtitle">
           {this.header.subtitle}
         </span>
-        <br />|{' '}
+        <br />
         <a href={'mailto:' + this.header.email} itemprop="email">
           {this.header.email}
-        </a>{' '}
-        |{' '}
+        </a>
         {this.header.links.map(l => {
-          return (
-            <span>
-              <a target="blank" href={l} itemprop="url">
-                {l}
-              </a>{' '}
-              |{' '}
-            </span>
-          );
+          return <cv-link link={l} />;
         })}
       </section>
     );

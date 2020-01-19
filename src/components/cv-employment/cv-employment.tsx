@@ -1,5 +1,5 @@
 import { Component, Prop, h } from '@stencil/core';
-import { Employment, Month } from '../../cvdata';
+import { Employment } from '../../cvdata';
 
 // TODO Schema.org
 
@@ -15,18 +15,12 @@ export class CvEmployment {
     if (e.current) {
       return <span class="current-employment">current</span>;
     } else {
-      return (
-        <slot>
-          <span class="italic">{Month[e.endDate?.month]}</span>{' '}
-          <span class="bold">{e.endDate?.year}</span>
-        </slot>
-      );
+      return <cv-monthyear date={e.endDate} />;
     }
   }
   render() {
     return (
-      <section>
-        <span class="section-header">Employment</span>
+      <cv-section name="Employment">
         {this.employment.map(e => {
           return (
             <section>
@@ -34,7 +28,7 @@ export class CvEmployment {
               <span class="emp-employer">{e.employer}</span>{' '}
               <cv-address address={e.address} />
               <br />
-              {Month[e.beginDate.month]} {e.beginDate.year} - {this.endDate(e)}
+              <cv-monthyear date={e.beginDate} /> - {this.endDate(e)}
               <br />
               <ul>
                 {e.bullets.map(b => {
@@ -44,7 +38,7 @@ export class CvEmployment {
             </section>
           );
         })}
-      </section>
+      </cv-section>
     );
   }
 }

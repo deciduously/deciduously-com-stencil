@@ -10,9 +10,11 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import {
   Address,
   CvData,
+  CvImageLink,
   Employment,
   Header,
   Intro,
+  MonthYear,
   Project,
   SchoolEntry,
 } from './cvdata';
@@ -56,11 +58,29 @@ export namespace Components {
     */
     'intro': Intro;
   }
+  interface CvLink {
+    /**
+    * Link object with image URL
+    */
+    'link': CvImageLink;
+  }
+  interface CvMonthyear {
+    /**
+    * Month and Year
+    */
+    'date': MonthYear;
+  }
   interface CvProjects {
     /**
     * Projects list
     */
     'projects': Project[];
+  }
+  interface CvSection {
+    /**
+    * Section name in bold
+    */
+    'name': string;
   }
 }
 
@@ -115,10 +135,28 @@ declare global {
     new (): HTMLCvIntroElement;
   };
 
+  interface HTMLCvLinkElement extends Components.CvLink, HTMLStencilElement {}
+  var HTMLCvLinkElement: {
+    prototype: HTMLCvLinkElement;
+    new (): HTMLCvLinkElement;
+  };
+
+  interface HTMLCvMonthyearElement extends Components.CvMonthyear, HTMLStencilElement {}
+  var HTMLCvMonthyearElement: {
+    prototype: HTMLCvMonthyearElement;
+    new (): HTMLCvMonthyearElement;
+  };
+
   interface HTMLCvProjectsElement extends Components.CvProjects, HTMLStencilElement {}
   var HTMLCvProjectsElement: {
     prototype: HTMLCvProjectsElement;
     new (): HTMLCvProjectsElement;
+  };
+
+  interface HTMLCvSectionElement extends Components.CvSection, HTMLStencilElement {}
+  var HTMLCvSectionElement: {
+    prototype: HTMLCvSectionElement;
+    new (): HTMLCvSectionElement;
   };
   interface HTMLElementTagNameMap {
     'app-cv': HTMLAppCvElement;
@@ -129,7 +167,10 @@ declare global {
     'cv-employment': HTMLCvEmploymentElement;
     'cv-header': HTMLCvHeaderElement;
     'cv-intro': HTMLCvIntroElement;
+    'cv-link': HTMLCvLinkElement;
+    'cv-monthyear': HTMLCvMonthyearElement;
     'cv-projects': HTMLCvProjectsElement;
+    'cv-section': HTMLCvSectionElement;
   }
 }
 
@@ -172,11 +213,29 @@ declare namespace LocalJSX {
     */
     'intro'?: Intro;
   }
+  interface CvLink {
+    /**
+    * Link object with image URL
+    */
+    'link'?: CvImageLink;
+  }
+  interface CvMonthyear {
+    /**
+    * Month and Year
+    */
+    'date'?: MonthYear;
+  }
   interface CvProjects {
     /**
     * Projects list
     */
     'projects'?: Project[];
+  }
+  interface CvSection {
+    /**
+    * Section name in bold
+    */
+    'name'?: string;
   }
 
   interface IntrinsicElements {
@@ -188,7 +247,10 @@ declare namespace LocalJSX {
     'cv-employment': CvEmployment;
     'cv-header': CvHeader;
     'cv-intro': CvIntro;
+    'cv-link': CvLink;
+    'cv-monthyear': CvMonthyear;
     'cv-projects': CvProjects;
+    'cv-section': CvSection;
   }
 }
 
@@ -206,7 +268,10 @@ declare module "@stencil/core" {
       'cv-employment': LocalJSX.CvEmployment & JSXBase.HTMLAttributes<HTMLCvEmploymentElement>;
       'cv-header': LocalJSX.CvHeader & JSXBase.HTMLAttributes<HTMLCvHeaderElement>;
       'cv-intro': LocalJSX.CvIntro & JSXBase.HTMLAttributes<HTMLCvIntroElement>;
+      'cv-link': LocalJSX.CvLink & JSXBase.HTMLAttributes<HTMLCvLinkElement>;
+      'cv-monthyear': LocalJSX.CvMonthyear & JSXBase.HTMLAttributes<HTMLCvMonthyearElement>;
       'cv-projects': LocalJSX.CvProjects & JSXBase.HTMLAttributes<HTMLCvProjectsElement>;
+      'cv-section': LocalJSX.CvSection & JSXBase.HTMLAttributes<HTMLCvSectionElement>;
     }
   }
 }
