@@ -8,11 +8,11 @@ import { Component, h } from '@stencil/core';
 export class AppHome {
   render() {
     return (
-      <div class="container">
+      <div>
         <p>Ben Lovy's personal website</p>
 
         <stencil-route-link url="/cv">
-          <button class="red">Resume/CV</button>
+          <button>Resume/CV</button>
         </stencil-route-link>
       </div>
     );

@@ -14,7 +14,7 @@ export class AppRoot {
           </stencil-route-link>
         </header>
 
-        <main class="container">
+        <main>
           <stencil-router>
             <stencil-route-switch scrollTopOffset={0}>
               <stencil-route url="/" component="app-home" exact={true} />

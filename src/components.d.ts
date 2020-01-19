@@ -20,6 +20,7 @@ import {
 } from './cvdata';
 
 export namespace Components {
+  interface AppAdmin {}
   interface AppCv {
     /**
     * Resume data object
@@ -86,6 +87,12 @@ export namespace Components {
 
 declare global {
 
+
+  interface HTMLAppAdminElement extends Components.AppAdmin, HTMLStencilElement {}
+  var HTMLAppAdminElement: {
+    prototype: HTMLAppAdminElement;
+    new (): HTMLAppAdminElement;
+  };
 
   interface HTMLAppCvElement extends Components.AppCv, HTMLStencilElement {}
   var HTMLAppCvElement: {
@@ -159,6 +166,7 @@ declare global {
     new (): HTMLCvSectionElement;
   };
   interface HTMLElementTagNameMap {
+    'app-admin': HTMLAppAdminElement;
     'app-cv': HTMLAppCvElement;
     'app-home': HTMLAppHomeElement;
     'app-root': HTMLAppRootElement;
@@ -175,6 +183,7 @@ declare global {
 }
 
 declare namespace LocalJSX {
+  interface AppAdmin {}
   interface AppCv {
     /**
     * Resume data object
@@ -239,6 +248,7 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
+    'app-admin': AppAdmin;
     'app-cv': AppCv;
     'app-home': AppHome;
     'app-root': AppRoot;
@@ -260,6 +270,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
+      'app-admin': LocalJSX.AppAdmin & JSXBase.HTMLAttributes<HTMLAppAdminElement>;
       'app-cv': LocalJSX.AppCv & JSXBase.HTMLAttributes<HTMLAppCvElement>;
       'app-home': LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
       'app-root': LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
