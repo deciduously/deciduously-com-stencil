@@ -20,7 +20,7 @@ const street = function(address: Address) {
   styleUrl: 'cv-address.css',
   shadow: true
 })
-export class AppRoot {
+export class CvAddress {
   /** Address object */
   @Prop() address: Address;
 

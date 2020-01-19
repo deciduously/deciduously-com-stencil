@@ -225,6 +225,7 @@ const defaultCv: CvData = {
 
 @Component({
   tag: 'app-cv',
+  styleUrl: 'cv.css',
   shadow: true
 })
 export class Cv {
