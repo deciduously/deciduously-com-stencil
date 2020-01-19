@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "description": "Personal blog, portfolio, and CV",
   "scripts": {
-    "build": "NODE_ENV=production stencil build",
+    "build": "NODE_ENV=production stencil build --prerender",
     "lint": "run-p lint:ts lint:styles",
     "lint:styles": "stylelint src/**/*.css",
     "lint:ts": "eslint src/**/*.ts*",
