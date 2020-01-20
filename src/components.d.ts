@@ -20,6 +20,7 @@ import {
 } from './cvdata';
 
 export namespace Components {
+  interface AppBlag {}
   interface AppCv {
     /**
     * Resume data object
@@ -27,6 +28,12 @@ export namespace Components {
     'data': CvData;
   }
   interface AppHome {}
+  interface AppPost {
+    /**
+    * A single blog post as a markdown string
+    */
+    'postMarkdown': string;
+  }
   interface AppRoot {}
   interface CvAddress {
     /**
@@ -87,6 +94,12 @@ export namespace Components {
 declare global {
 
 
+  interface HTMLAppBlagElement extends Components.AppBlag, HTMLStencilElement {}
+  var HTMLAppBlagElement: {
+    prototype: HTMLAppBlagElement;
+    new (): HTMLAppBlagElement;
+  };
+
   interface HTMLAppCvElement extends Components.AppCv, HTMLStencilElement {}
   var HTMLAppCvElement: {
     prototype: HTMLAppCvElement;
@@ -97,6 +110,12 @@ declare global {
   var HTMLAppHomeElement: {
     prototype: HTMLAppHomeElement;
     new (): HTMLAppHomeElement;
+  };
+
+  interface HTMLAppPostElement extends Components.AppPost, HTMLStencilElement {}
+  var HTMLAppPostElement: {
+    prototype: HTMLAppPostElement;
+    new (): HTMLAppPostElement;
   };
 
   interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {}
@@ -159,8 +178,10 @@ declare global {
     new (): HTMLCvSectionElement;
   };
   interface HTMLElementTagNameMap {
+    'app-blag': HTMLAppBlagElement;
     'app-cv': HTMLAppCvElement;
     'app-home': HTMLAppHomeElement;
+    'app-post': HTMLAppPostElement;
     'app-root': HTMLAppRootElement;
     'cv-address': HTMLCvAddressElement;
     'cv-education': HTMLCvEducationElement;
@@ -175,6 +196,7 @@ declare global {
 }
 
 declare namespace LocalJSX {
+  interface AppBlag {}
   interface AppCv {
     /**
     * Resume data object
@@ -182,6 +204,12 @@ declare namespace LocalJSX {
     'data'?: CvData;
   }
   interface AppHome {}
+  interface AppPost {
+    /**
+    * A single blog post as a markdown string
+    */
+    'postMarkdown'?: string;
+  }
   interface AppRoot {}
   interface CvAddress {
     /**
@@ -239,8 +267,10 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
+    'app-blag': AppBlag;
     'app-cv': AppCv;
     'app-home': AppHome;
+    'app-post': AppPost;
     'app-root': AppRoot;
     'cv-address': CvAddress;
     'cv-education': CvEducation;
@@ -260,8 +290,10 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
+      'app-blag': LocalJSX.AppBlag & JSXBase.HTMLAttributes<HTMLAppBlagElement>;
       'app-cv': LocalJSX.AppCv & JSXBase.HTMLAttributes<HTMLAppCvElement>;
       'app-home': LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
+      'app-post': LocalJSX.AppPost & JSXBase.HTMLAttributes<HTMLAppPostElement>;
       'app-root': LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
       'cv-address': LocalJSX.CvAddress & JSXBase.HTMLAttributes<HTMLCvAddressElement>;
       'cv-education': LocalJSX.CvEducation & JSXBase.HTMLAttributes<HTMLCvEducationElement>;
