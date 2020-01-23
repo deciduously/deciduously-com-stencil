@@ -25,9 +25,9 @@ export class CvHeader {
           <a href={'mailto:' + this.header.email} itemprop="email">
             {this.header.email}
           </a>
-          {this.header.links.map(l => {
-            return <cv-link link={l} />;
-          })}
+          <div class="cv-links">
+            {this.header.links.map(l => <cv-link class="cv-link" link={l} />)}
+          </div>
         </section>
       );
     }

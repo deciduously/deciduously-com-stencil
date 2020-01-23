@@ -3,18 +3,6 @@ import { Address } from '../../cvdata';
 
 /* https://stackoverflow.com/questions/26188003/markup-for-postal-addresses */
 
-const street = function(address: Address) {
-  if (address.street != null) {
-    return (
-      <slot>
-        <span itemprop="streetAddress">{address.street}</span>
-        <br />
-      </slot>
-    );
-  } else {
-  }
-};
-
 @Component({
   tag: 'cv-address',
   styleUrl: 'cv-address.css',
@@ -24,15 +12,26 @@ export class CvAddress {
   /** Address object */
   @Prop() address: Address;
 
+  street = (address: Address) => {
+    if (address.street != null) {
+      return (
+        <slot>
+          <span itemprop="streetAddress">{address.street}</span>
+          <br />
+        </slot>
+      );
+    }
+  };
+
   render() {
     if (this.address !== undefined) {
       return (
         <section
           itemscope
           itemtype="https://schema.org/PostalAddress"
-          id="address"
+          class="address"
         >
-          {street(this.address)}
+          {this.street(this.address)}
           <span itemprop="addressLocality">
             {this.address.locality.name}
           </span>,{' '}
