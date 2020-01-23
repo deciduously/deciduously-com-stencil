@@ -1,7 +1,3 @@
 ul {
   @apply list-none;
 }
-
-.ed-address {
-  @apply text-sm;
-}

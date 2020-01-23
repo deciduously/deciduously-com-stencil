@@ -236,12 +236,18 @@ export class Cv {
     if (this.data !== undefined) {
       return (
         <main class="cv">
-          <cv-header class="cv-section" header={this.data.header} />
-          <cv-address class="cv-section" address={this.data.address} />
-          <cv-intro class="cv-section" intro={this.data.intro} />
-          <cv-education class="cv-section" schools={this.data.education} />
-          <cv-employment class="cv-section" employment={this.data.employment} />
-          <cv-projects class="cv-section" projects={this.data.projects} />
+          <div class="cv-section">
+            <cv-header class="cv-heading-section" header={this.data.header} />
+            <cv-address class="cv-heading-section" address={this.data.address} />
+            <cv-education class="cv-heading-section" schools={this.data.education} />
+          </div>
+          <div class="cv-section">
+            <div class="cv-body-section">
+              <cv-intro intro={this.data.intro} />
+              <cv-projects projects={this.data.projects} />
+            </div>
+            <cv-employment class="cv-body-section" employment={this.data.employment} />
+          </div>
         </main>
       );
     }
