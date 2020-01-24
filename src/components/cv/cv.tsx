@@ -1,5 +1,8 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Prop, h, Event, EventEmitter, Listen } from '@stencil/core';
+import html2pdf from 'html2pdf.js'
 import { CvData, AddressRegion, Month, Locality, Address } from '../../cvdata';
+
+
 
 // TODO ability to toggle on/off Address
 // TODO different "modes"?
@@ -232,10 +235,27 @@ export class Cv {
   /** Resume data object */
   @Prop() data: CvData = defaultCv;
 
+  /* TODO this button shoudl be its on component that dispatches an event */
+  /*
+  @Event() onDloadPdf: EventEmitter;
+
+  @Listen('onDloadPdf')
+  onDloadHandler(_evt: CustomEvent) {
+    const el = document.querySelector(".cv");
+    html2pdf(el);
+  }
+  */
+  print() {
+    const el = document.querySelector(".cv");
+    console.log('Printin!');
+    html2pdf(el);
+  }
+
   render() {
     if (this.data !== undefined) {
       return (
         <main class="cv">
+          <button onClick={_ => this.print()}>Donwload PDF</button>
           <div class="cv-section">
             <cv-header class="cv-heading-section" header={this.data.header} />
             <cv-address class="cv-heading-section" address={this.data.address} />
