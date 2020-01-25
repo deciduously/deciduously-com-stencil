@@ -1,3 +1,11 @@
 .cv-section {
-  @apply flex px-10;
+  @apply flex mb-4;
+}
+
+.cv-heading-section {
+  @apply w-1/3 px-2;
+}
+
+.cv-body-section {
+  @apply w-1/2 px-2;
 }
