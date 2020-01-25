@@ -17,7 +17,8 @@
   "dependencies": {
     "@stencil/core": "^1.8.5",
     "@stencil/router": "^1.0.1",
-    "markdown-it": "^10.0.0",
+    "html2canvas": "^1.0.0-rc.5",
+    "jspdf": "^1.5.3",
     "tailwindcss": "^1.1.4"
   },
   "license": "MIT",
