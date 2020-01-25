@@ -22,7 +22,7 @@ From the ashes, it rises... a deciduously-com for 2020 and beyond.
 
 ### Content Management
 
-- [Netlify-CMS](https://www.netlifycms.org/)
+- [markdown-it](https://markdown-it.github.io/)
 
 ### Language Tooling
 

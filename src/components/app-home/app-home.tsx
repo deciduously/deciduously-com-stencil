@@ -10,7 +10,9 @@ export class AppHome {
     return (
       <div>
         <p>Ben Lovy's personal website</p>
-
+        <stencil-route-link url="/blag">
+          <button>Blag</button>
+        </stencil-route-link>
         <stencil-route-link url="/cv">
           <button>Resume/CV</button>
         </stencil-route-link>

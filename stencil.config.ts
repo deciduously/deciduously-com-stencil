@@ -1,6 +1,7 @@
 import { Config } from '@stencil/core';
 import { postcss } from '@stencil/postcss';
 import autoprefixer from 'autoprefixer';
+import nodePolyfills from 'rollup-plugin-node-polyfills';
 const purgecss = require('@fullhuman/postcss-purgecss')({
   content: ['./src/**/*.ts', './src/**/*.tsx', './src/index.html'],
   defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
@@ -13,7 +14,7 @@ export const config: Config = {
     {
       type: 'www',
       serviceWorker: null,
-      baseUrl: 'https://myapp.local/'
+      baseUrl: 'https://deciduously.com/'
     }
   ],
   plugins: [
@@ -25,6 +26,7 @@ export const config: Config = {
           ? [purgecss, require('cssnano')]
           : [])
       ]
-    })
+    }),
+    nodePolyfills()
   ]
 };
