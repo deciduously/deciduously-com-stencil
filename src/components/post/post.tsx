@@ -1,5 +1,4 @@
 import { Component, Prop, Host, h } from '@stencil/core';
-const md = require('markdown-it');
 
 @Component({
   tag: 'app-post',
@@ -13,7 +12,7 @@ export class Post {
     if (this.postMarkdown !== undefined) {
       return (
         <Host>
-          <p>{md.render(this.postMarkdown)}</p>
+          <p>{this.postMarkdown}</p>
           <slot></slot>
         </Host>
       );

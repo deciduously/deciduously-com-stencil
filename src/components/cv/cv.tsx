@@ -1,6 +1,6 @@
 import { Component, Prop, h } from '@stencil/core';
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
+//import jsPDF from 'jspdf';
+//import html2canvas from 'html2canvas';
 import { CvData, defaultCv } from '../../cvdata';
 
 // TODO ability to toggle on/off Address
@@ -17,28 +17,28 @@ export class Cv {
   /** Resume data object */
   @Prop() data: CvData = defaultCv;
 
-  print() {
-    try {
-      // Init html2canvas for jsPDF
-      window['html2canvas'] = html2canvas;
-
-      const doc = new jsPDF('p', 'pt', 'letter');
-      doc.html(document.body, {
-        callback: function(doc) {
-          doc.save();
-        }
-      });
-    } catch (e) {
-      if (e.name !== 'SecurityError') throw e;
-      return;
-    }
-  }
+  //print() {
+  //  try {
+  //    // Init html2canvas for jsPDF
+  //    window['html2canvas'] = html2canvas;
+  //
+  //    const doc = new jsPDF('p', 'pt', 'letter');
+  //    doc.html(document.body, {
+  //      callback: function(doc) {
+  //        doc.save();
+  //      }
+  //    });
+  //  } catch (e) {
+  //    if (e.name !== 'SecurityError') throw e;
+  //    return;
+  //  }
+  //}
 
   render() {
     if (this.data !== undefined) {
       return (
         <div>
-          <button id="#ignorePDF" onClick={_ => this.print()}>
+          <button id="#ignorePDF" onClick={_ => console.log('Not yet!!')}>
             Download PDF
           </button>
           <main class="cv" id="cv">
