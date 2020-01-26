@@ -16,8 +16,10 @@ export class CvProjects {
           {this.projects.map(p => {
             return (
               <section class="project">
-                <span class="project-title">{p.name}</span>
-                <p>{p.synopsis}</p>
+                <p>
+                  <span class="title">{p.name}</span>
+                  <div>{p.synopsis}</div>
+                </p>
               </section>
             );
           })}

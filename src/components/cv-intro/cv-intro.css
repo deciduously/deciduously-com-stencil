@@ -1,0 +1,7 @@
+.one-liner {
+  @apply font-semibold italic;
+}
+
+.intro-heading {
+  @apply font-bold;
+}

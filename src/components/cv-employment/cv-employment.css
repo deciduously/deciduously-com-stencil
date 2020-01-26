@@ -1,0 +1,11 @@
+.title {
+  @apply font-semibold;
+}
+
+.employer {
+  @apply italic text-sm;
+}
+
+.address {
+  @apply float-right;
+}

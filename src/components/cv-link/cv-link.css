@@ -1,3 +1,7 @@
 a {
   @apply no-underline;
 }
+
+figcaption {
+  @apply text-xs italic;
+}

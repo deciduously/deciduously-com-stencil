@@ -25,9 +25,12 @@ export class CvEmployment {
           {this.employment.map(e => {
             return (
               <section>
-                <span class="emp-title">{e.title}</span> -{' '}
-                <span class="emp-employer">{e.employer}</span>{' '}
-                <cv-address address={e.address} />
+                <span class="title">{e.title}</span>
+                <br />
+                <span class="employer">{e.employer}</span>{' '}
+                <div class="address">
+                  <cv-address address={e.address} />
+                </div>
                 <br />
                 <cv-monthyear date={e.beginDate} /> - {this.endDate(e)}
                 <br />

@@ -15,10 +15,17 @@ export class CvAddress {
   street = (address: Address) => {
     if (address.street != null) {
       return (
-        <slot>
-          <span itemprop="streetAddress">{address.street}</span>
-          <br />
-        </slot>
+        <div itemprop="streetAddress">
+          {address.street}
+          {address.line2 !== undefined ? (
+            <slot>
+              <br />
+              {address.line2}
+            </slot>
+          ) : (
+            <slot></slot>
+          )}
+        </div>
       );
     }
   };
