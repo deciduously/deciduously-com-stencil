@@ -1,18 +1,6 @@
 // All logic for scraping posts
-import * as postData from './assets/articles.json';
-
-// Interfaces
-
-export interface BlagPost {
-  cover_image?: string;
-  date: string;
-  description: string;
-  id: number;
-  markdown: string;
-  shortTitle?: string;
-  tags: string; // TODO string[]
-  title: string;
-}
+import { BlagPost } from './interfaces';
+import * as postData from '../assets/articles.json';
 
 export class BlagPosts {
   private __posts: BlagPost[];

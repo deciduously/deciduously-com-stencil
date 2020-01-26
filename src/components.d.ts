@@ -9,6 +9,7 @@
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import {
   Address,
+  BlagPost,
   CvData,
   CvImageLink,
   Employment,
@@ -17,14 +18,11 @@ import {
   MonthYear,
   Project,
   SchoolEntry,
-} from './cvdata';
+} from './global/interfaces';
 import {
   MatchResults,
   RouterHistory,
 } from '@stencil/router';
-import {
-  BlagPost,
-} from './posts';
 
 export namespace Components {
   interface AppBlag {}

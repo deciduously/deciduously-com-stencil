@@ -1,5 +1,5 @@
 import { Component, Host, h } from '@stencil/core';
-import { blagPosts, BlagPosts } from '../../posts';
+import { blagPosts, BlagPosts } from '../../global/posts';
 
 @Component({
   tag: 'app-blag',

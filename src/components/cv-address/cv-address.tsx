@@ -1,5 +1,5 @@
 import { Component, Prop, h } from '@stencil/core';
-import { Address } from '../../cvdata';
+import { Address } from '../../global/interfaces';
 
 /* https://stackoverflow.com/questions/26188003/markup-for-postal-addresses */
 

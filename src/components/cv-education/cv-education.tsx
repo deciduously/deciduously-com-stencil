@@ -1,5 +1,5 @@
 import { Component, Prop, h } from '@stencil/core';
-import { SchoolEntry } from '../../cvdata';
+import { SchoolEntry } from '../../global/interfaces';
 
 @Component({
   tag: 'cv-education',

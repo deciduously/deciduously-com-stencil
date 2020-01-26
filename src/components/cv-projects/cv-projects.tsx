@@ -1,5 +1,5 @@
 import { Component, Prop, h } from '@stencil/core';
-import { Project } from '../../cvdata';
+import { Project } from '../../global/interfaces';
 
 @Component({
   tag: 'cv-projects',

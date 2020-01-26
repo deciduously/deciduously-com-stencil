@@ -1,6 +1,7 @@
 import { Component, Prop, h } from '@stencil/core';
 import showdown from 'showdown';
-import { blagPosts, BlagPost, notFound } from '../../posts';
+import { BlagPost } from '../../global/interfaces';
+import { blagPosts, notFound } from '../../global/posts';
 import { MatchResults, RouterHistory } from '@stencil/router';
 
 @Component({

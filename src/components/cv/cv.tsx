@@ -1,7 +1,8 @@
 import { Component, Prop, h } from '@stencil/core';
 //import jsPDF from 'jspdf';
 //import html2canvas from 'html2canvas';
-import { CvData, defaultCv } from '../../cvdata';
+import { CvData } from '../../global/interfaces';
+import * as cvData from '../../assets/cv.json';
 
 // TODO ability to toggle on/off Address
 // TODO different "modes"?
@@ -15,7 +16,7 @@ import { CvData, defaultCv } from '../../cvdata';
 })
 export class Cv {
   /** Resume data object */
-  @Prop() data: CvData = defaultCv;
+  @Prop() data: CvData = cvData;
 
   //print() {
   //  try {

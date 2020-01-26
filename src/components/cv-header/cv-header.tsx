@@ -1,5 +1,5 @@
 import { Component, Prop, h } from '@stencil/core';
-import { Header } from '../../cvdata';
+import { Header } from '../../global/interfaces';
 
 @Component({
   tag: 'cv-header',
@@ -26,7 +26,9 @@ export class CvHeader {
             {this.header.email}
           </a>
           <div class="cv-links">
-            {this.header.links.map(l => <cv-link class="cv-link" link={l} />)}
+            {this.header.links.map(l => (
+              <cv-link class="cv-link" link={l} />
+            ))}
           </div>
         </section>
       );
