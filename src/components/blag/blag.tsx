@@ -1,4 +1,5 @@
 import { Component, Host, h } from '@stencil/core';
+import { blagPosts, BlagPosts } from '../../posts';
 
 @Component({
   tag: 'app-blag',
@@ -6,17 +7,26 @@ import { Component, Host, h } from '@stencil/core';
   shadow: true
 })
 export class Blag {
-  posts(): string[] {
-    return ['# Test Markdown String'];
-  }
+  blagPosts: BlagPosts = blagPosts;
   render() {
-    return (
-      <Host>
-        <h1>Blag</h1>
-        {this.posts().map(p => {
-          return <app-post postMarkdown={p} />;
-        })}
-      </Host>
-    );
+    if (this.blagPosts !== undefined) {
+      return (
+        <Host>
+          <h1>Blag</h1>
+          {this.blagPosts
+            .allArticleTitles()
+            .reverse()
+            .map(([id, name]) => {
+              return (
+                <li>
+                  <stencil-route-link url={'/post/' + id}>
+                    {name}
+                  </stencil-route-link>
+                </li>
+              );
+            })}
+        </Host>
+      );
+    }
   }
 }

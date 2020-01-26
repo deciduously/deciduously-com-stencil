@@ -29,10 +29,7 @@ export namespace Components {
   }
   interface AppHome {}
   interface AppPost {
-    /**
-    * A single blog post as a markdown string
-    */
-    'postMarkdown': string;
+    'match': any;
   }
   interface AppRoot {}
   interface CvAddress {
@@ -205,10 +202,7 @@ declare namespace LocalJSX {
   }
   interface AppHome {}
   interface AppPost {
-    /**
-    * A single blog post as a markdown string
-    */
-    'postMarkdown'?: string;
+    'match'?: any;
   }
   interface AppRoot {}
   interface CvAddress {
