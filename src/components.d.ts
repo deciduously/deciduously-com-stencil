@@ -18,6 +18,13 @@ import {
   Project,
   SchoolEntry,
 } from './cvdata';
+import {
+  MatchResults,
+  RouterHistory,
+} from '@stencil/router';
+import {
+  BlagPost,
+} from './posts';
 
 export namespace Components {
   interface AppBlag {}
@@ -29,7 +36,9 @@ export namespace Components {
   }
   interface AppHome {}
   interface AppPost {
-    'match': any;
+    'blagPost': BlagPost;
+    'history': RouterHistory;
+    'match': MatchResults;
   }
   interface AppRoot {}
   interface CvAddress {
@@ -202,7 +211,9 @@ declare namespace LocalJSX {
   }
   interface AppHome {}
   interface AppPost {
-    'match'?: any;
+    'blagPost'?: BlagPost;
+    'history'?: RouterHistory;
+    'match'?: MatchResults;
   }
   interface AppRoot {}
   interface CvAddress {

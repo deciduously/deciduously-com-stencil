@@ -36,6 +36,22 @@ export class BlagPosts {
     });
     return ret;
   }
+  getPostByID(id: number): BlagPost | false {
+    for (const p of this.posts) {
+      if (p.id === id) return p;
+    }
+    return false;
+  }
 }
 
 export const blagPosts = new BlagPosts();
+
+export const notFound: BlagPost = {
+  date: 'NOPE',
+  description: 'Nothing here, bud.',
+  id: -99,
+  markdown: '## You should try another link',
+  shortTitle: 'Oops',
+  tags: 'help',
+  title: 'Unknown Post'
+};
