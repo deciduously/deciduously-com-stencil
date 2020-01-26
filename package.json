@@ -1,8 +1,8 @@
 {
   "name": "deciduously-com",
-  "private": true,
   "version": "0.0.1",
   "description": "Personal blog, portfolio, and CV",
+  "main": "index.ts",
   "scripts": {
     "build": "NODE_ENV=production stencil build --prerender",
     "lint": "run-p lint:ts lint:styles",
@@ -14,17 +14,26 @@
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deciduously/deciduously-com.git"
+  },
+  "keywords": [
+    "blog"
+  ],
+  "author": "Ben Lovy <ben@deciduously.com>",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/deciduously/deciduously-com/issues"
+  },
+  "homepage": "https://github.com/deciduously/deciduously-com#readme",
   "dependencies": {
-    "@stencil/core": "^1.8.5",
+    "@stencil/core": "^1.8.6",
     "@stencil/router": "^1.0.1",
-    "html2canvas": "^1.0.0-rc.5",
-    "html2pdf": "^0.0.11",
-    "jspdf": "^1.5.3",
     "tailwindcss": "^1.1.4"
   },
-  "license": "MIT",
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^2.0.3",
+    "@fullhuman/postcss-purgecss": "^2.0.5",
     "@stencil/eslint-plugin": "^0.2.1",
     "@stencil/postcss": "^1.0.1",
     "@types/autoprefixer": "^9.6.1",
@@ -33,8 +42,8 @@
     "@types/prettier": "^1.19.0",
     "@types/puppeteer": "1.20.3",
     "@types/stylelint": "^9.10.1",
-    "@typescript-eslint/eslint-plugin": "^2.16.0",
-    "@typescript-eslint/parser": "^2.16.0",
+    "@typescript-eslint/eslint-plugin": "^2.17.0",
+    "@typescript-eslint/parser": "^2.17.0",
     "autoprefixer": "^9.7.4",
     "cssnano": "^4.1.10",
     "eslint": "^6.8.0",
@@ -49,7 +58,7 @@
     "strict-tslint-config": "^1.0.1",
     "stylelint": "^13.0.0",
     "stylelint-config-standard": "^19.0.0",
-    "tslint": "^5.20.1",
+    "tslint": "^6.0.0",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.7.5"
   }
