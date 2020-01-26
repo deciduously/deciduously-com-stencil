@@ -1,5 +1,5 @@
 import { Component, Prop, h } from '@stencil/core';
-import { CvImageLink } from '../../cvdata';
+import { CvImageLink } from '../../global/interfaces';
 
 @Component({
   tag: 'cv-link',

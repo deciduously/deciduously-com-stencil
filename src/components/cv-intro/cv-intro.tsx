@@ -1,5 +1,5 @@
 import { Component, Prop, h } from '@stencil/core';
-import { Intro } from '../../cvdata';
+import { Intro } from '../../global/interfaces';
 
 @Component({
   tag: 'cv-intro',

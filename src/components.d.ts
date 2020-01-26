@@ -9,6 +9,7 @@
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import {
   Address,
+  BlagPost,
   CvData,
   CvImageLink,
   Employment,
@@ -17,7 +18,11 @@ import {
   MonthYear,
   Project,
   SchoolEntry,
-} from './cvdata';
+} from './global/interfaces';
+import {
+  MatchResults,
+  RouterHistory,
+} from '@stencil/router';
 
 export namespace Components {
   interface AppBlag {}
@@ -29,10 +34,9 @@ export namespace Components {
   }
   interface AppHome {}
   interface AppPost {
-    /**
-    * A single blog post as a markdown string
-    */
-    'postMarkdown': string;
+    'blagPost': BlagPost;
+    'history': RouterHistory;
+    'match': MatchResults;
   }
   interface AppRoot {}
   interface CvAddress {
@@ -205,10 +209,9 @@ declare namespace LocalJSX {
   }
   interface AppHome {}
   interface AppPost {
-    /**
-    * A single blog post as a markdown string
-    */
-    'postMarkdown'?: string;
+    'blagPost'?: BlagPost;
+    'history'?: RouterHistory;
+    'match'?: MatchResults;
   }
   interface AppRoot {}
   interface CvAddress {

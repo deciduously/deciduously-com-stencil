@@ -1,5 +1,5 @@
 import { Component, Prop, h } from '@stencil/core';
-import { Employment } from '../../cvdata';
+import { Employment } from '../../global/interfaces';
 
 // TODO Schema.org
 

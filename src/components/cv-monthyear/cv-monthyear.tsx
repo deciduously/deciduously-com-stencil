@@ -1,5 +1,5 @@
 import { Component, Prop, h } from '@stencil/core';
-import { Month, MonthYear } from '../../cvdata';
+import { Month, MonthYear } from '../../global/interfaces';
 
 @Component({
   tag: 'cv-monthyear',
