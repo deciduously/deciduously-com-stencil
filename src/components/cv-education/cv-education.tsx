@@ -18,6 +18,9 @@ export class CvEducation {
               <div>
                 <span class="school-name">{s.name}</span>
                 <cv-address class="ed-address" address={s.address} />
+                <p class="subtitle">
+                  Unofficial transcript available on request
+                </p>
                 <ul class="schools">
                   {s.degrees.map(d => {
                     return (
@@ -28,10 +31,15 @@ export class CvEducation {
                           </abbr>{' '}
                           {d.type.subject}
                           <br />
-                          GPA: {d.gpa.toFixed(1) + ' - '}
                           <span class="grad-date">
                             <cv-monthyear date={d.graduationDate.date} />
-                          </span>
+                          </span>{' '}
+                          {d.graduationDate.expected ? (
+                            <span class="expected">- expected</span>
+                          ) : (
+                            <slot></slot>
+                          )}
+                          {' | GPA: ' + d.gpa.toFixed(1)}
                         </p>
                       </li>
                     );

@@ -44,18 +44,14 @@ export class Cv {
           <main class="cv" id="cv">
             <div class="cv-section">
               <cv-header class="cv-heading-section" header={this.data.header} />
-              <cv-address
-                class="cv-heading-section"
-                address={this.data.address}
-              />
-              <cv-education
-                class="cv-heading-section"
-                schools={this.data.education}
-              />
+              <div class="cv-heading-section">
+                <cv-address class="homeaddress" address={this.data.address} />
+              </div>
             </div>
             <div class="cv-section">
               <div class="cv-body-section">
                 <cv-intro intro={this.data.intro} />
+                <cv-education schools={this.data.education} />
                 <cv-projects projects={this.data.projects} />
               </div>
               <cv-employment

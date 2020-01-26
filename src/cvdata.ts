@@ -14,6 +14,7 @@ export interface Locality {
 
 export interface Address {
   street?: string;
+  line2?: string;
   locality: Locality;
 }
 
@@ -238,7 +239,7 @@ export const defaultCv: CvData = {
   employment: [
     {
       title: 'Accounts Receivable/Billing',
-      employer: 'Jewish Community Centers of Greater Boston',
+      employer: 'JCC Greater Boston',
       beginDate: {
         year: 2018,
         month: Month.Apr
@@ -253,7 +254,7 @@ export const defaultCv: CvData = {
     },
     {
       title: 'Administrative Assistant',
-      employer: 'Jewish Community Centers of Greater Boston',
+      employer: 'JCC Greater Boston',
       beginDate: {
         year: 2017,
         month: Month.Aug
@@ -333,6 +334,7 @@ export const defaultCv: CvData = {
   ],
   address: {
     street: '37 Capitol St',
+    line2: 'Unit 1',
     locality: {
       name: 'Watertown',
       postalCode: '02472',

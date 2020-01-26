@@ -9,7 +9,3 @@
 .cv-links {
   @apply flex mb-4;
 }
-
-.cv-link {
-  @apply w-1/3;
-}

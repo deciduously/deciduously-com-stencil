@@ -9,7 +9,7 @@ import { CvImageLink } from '../../cvdata';
 export class CvLink {
   /** Link object with image URL */
   @Prop() link: CvImageLink;
-  private imgDim: number = 48;
+  private imgDim: number = 32;
 
   render() {
     if (this.link !== undefined) {
