@@ -8,36 +8,25 @@
 
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import {
-  Address,
-  BlagPost,
-  CvData,
-  CvImageLink,
-  Employment,
-  Header,
-  Intro,
-  MonthYear,
-  Project,
-  SchoolEntry,
-} from './global/interfaces';
-import {
   MatchResults,
   RouterHistory,
 } from '@stencil/router';
+import {
+  Address,
+  BlagPost,
+  CvImageLink,
+  MonthYear,
+} from './global/interfaces';
 
 export namespace Components {
   interface AppBlag {}
-  interface AppCv {
-    /**
-    * Resume data object
-    */
-    'data': CvData;
-  }
-  interface AppHome {}
+  interface AppCv {}
   interface AppPost {
     'blagPost': BlagPost;
     'history': RouterHistory;
     'match': MatchResults;
   }
+  interface AppProjects {}
   interface AppRoot {}
   interface CvAddress {
     /**
@@ -45,30 +34,10 @@ export namespace Components {
     */
     'address': Address;
   }
-  interface CvEducation {
-    /**
-    * Schools list
-    */
-    'schools': SchoolEntry[];
-  }
-  interface CvEmployment {
-    /**
-    * Employment array
-    */
-    'employment': Employment[];
-  }
-  interface CvHeader {
-    /**
-    * Header data
-    */
-    'header': Header;
-  }
-  interface CvIntro {
-    /**
-    * Intro object
-    */
-    'intro': Intro;
-  }
+  interface CvEducation {}
+  interface CvEmployment {}
+  interface CvHeader {}
+  interface CvIntro {}
   interface CvLink {
     /**
     * Link object with image URL
@@ -81,12 +50,7 @@ export namespace Components {
     */
     'date': MonthYear;
   }
-  interface CvProjects {
-    /**
-    * Projects list
-    */
-    'projects': Project[];
-  }
+  interface CvProjects {}
   interface CvSection {
     /**
     * Section name in bold
@@ -110,16 +74,16 @@ declare global {
     new (): HTMLAppCvElement;
   };
 
-  interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {}
-  var HTMLAppHomeElement: {
-    prototype: HTMLAppHomeElement;
-    new (): HTMLAppHomeElement;
-  };
-
   interface HTMLAppPostElement extends Components.AppPost, HTMLStencilElement {}
   var HTMLAppPostElement: {
     prototype: HTMLAppPostElement;
     new (): HTMLAppPostElement;
+  };
+
+  interface HTMLAppProjectsElement extends Components.AppProjects, HTMLStencilElement {}
+  var HTMLAppProjectsElement: {
+    prototype: HTMLAppProjectsElement;
+    new (): HTMLAppProjectsElement;
   };
 
   interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {}
@@ -184,8 +148,8 @@ declare global {
   interface HTMLElementTagNameMap {
     'app-blag': HTMLAppBlagElement;
     'app-cv': HTMLAppCvElement;
-    'app-home': HTMLAppHomeElement;
     'app-post': HTMLAppPostElement;
+    'app-projects': HTMLAppProjectsElement;
     'app-root': HTMLAppRootElement;
     'cv-address': HTMLCvAddressElement;
     'cv-education': HTMLCvEducationElement;
@@ -201,18 +165,13 @@ declare global {
 
 declare namespace LocalJSX {
   interface AppBlag {}
-  interface AppCv {
-    /**
-    * Resume data object
-    */
-    'data'?: CvData;
-  }
-  interface AppHome {}
+  interface AppCv {}
   interface AppPost {
     'blagPost'?: BlagPost;
     'history'?: RouterHistory;
     'match'?: MatchResults;
   }
+  interface AppProjects {}
   interface AppRoot {}
   interface CvAddress {
     /**
@@ -220,30 +179,10 @@ declare namespace LocalJSX {
     */
     'address'?: Address;
   }
-  interface CvEducation {
-    /**
-    * Schools list
-    */
-    'schools'?: SchoolEntry[];
-  }
-  interface CvEmployment {
-    /**
-    * Employment array
-    */
-    'employment'?: Employment[];
-  }
-  interface CvHeader {
-    /**
-    * Header data
-    */
-    'header'?: Header;
-  }
-  interface CvIntro {
-    /**
-    * Intro object
-    */
-    'intro'?: Intro;
-  }
+  interface CvEducation {}
+  interface CvEmployment {}
+  interface CvHeader {}
+  interface CvIntro {}
   interface CvLink {
     /**
     * Link object with image URL
@@ -256,12 +195,7 @@ declare namespace LocalJSX {
     */
     'date'?: MonthYear;
   }
-  interface CvProjects {
-    /**
-    * Projects list
-    */
-    'projects'?: Project[];
-  }
+  interface CvProjects {}
   interface CvSection {
     /**
     * Section name in bold
@@ -272,8 +206,8 @@ declare namespace LocalJSX {
   interface IntrinsicElements {
     'app-blag': AppBlag;
     'app-cv': AppCv;
-    'app-home': AppHome;
     'app-post': AppPost;
+    'app-projects': AppProjects;
     'app-root': AppRoot;
     'cv-address': CvAddress;
     'cv-education': CvEducation;
@@ -295,8 +229,8 @@ declare module "@stencil/core" {
     interface IntrinsicElements {
       'app-blag': LocalJSX.AppBlag & JSXBase.HTMLAttributes<HTMLAppBlagElement>;
       'app-cv': LocalJSX.AppCv & JSXBase.HTMLAttributes<HTMLAppCvElement>;
-      'app-home': LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
       'app-post': LocalJSX.AppPost & JSXBase.HTMLAttributes<HTMLAppPostElement>;
+      'app-projects': LocalJSX.AppProjects & JSXBase.HTMLAttributes<HTMLAppProjectsElement>;
       'app-root': LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
       'cv-address': LocalJSX.CvAddress & JSXBase.HTMLAttributes<HTMLCvAddressElement>;
       'cv-education': LocalJSX.CvEducation & JSXBase.HTMLAttributes<HTMLCvEducationElement>;

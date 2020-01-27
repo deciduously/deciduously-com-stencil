@@ -1,3 +1,19 @@
 .home {
-  @apply mx-auto px-10;
+  @apply flex mx-auto;
+}
+
+.headerlink {
+  @apply px-10;
+}
+
+.mainlink {
+  @apply font-extrabold text-lg;
+}
+
+.otherlink {
+  @apply italic;
+}
+
+a {
+  @apply no-underline;
 }

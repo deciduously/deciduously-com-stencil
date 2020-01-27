@@ -1,5 +1,4 @@
-import { Component, Prop, Host, h } from '@stencil/core';
-import { CvData } from '../../global/interfaces';
+import { Component, Host, h } from '@stencil/core';
 import * as cvData from '../../assets/cv.json';
 
 // TODO ability to toggle on/off Address
@@ -13,34 +12,26 @@ import * as cvData from '../../assets/cv.json';
   shadow: true
 })
 export class Cv {
-  /** Resume data object */
-  @Prop() data: CvData = cvData;
-
   render() {
-    if (this.data !== undefined) {
-      return (
-        <Host id="cv">
-          <main class="cv">
-            <div class="cv-section">
-              <cv-header class="cv-heading-section" header={this.data.header} />
-              <div class="cv-heading-section">
-                <cv-address class="homeaddress" address={this.data.address} />
-              </div>
+    return (
+      <Host id="cv">
+        <main class="cv">
+          <div class="cv-section">
+            <cv-header class="cv-heading-section" />
+            <div class="cv-heading-section">
+              <cv-address class="homeaddress" address={cvData.address} />
             </div>
-            <div class="cv-section">
-              <div class="cv-body-section">
-                <cv-intro intro={this.data.intro} />
-                <cv-education schools={this.data.education} />
-                <cv-projects projects={this.data.projects} />
-              </div>
-              <cv-employment
-                class="cv-body-section"
-                employment={this.data.employment}
-              />
+          </div>
+          <div class="cv-section">
+            <div class="cv-body-section">
+              <cv-intro />
+              <cv-education />
+              <cv-projects />
             </div>
-          </main>
-        </Host>
-      );
-    }
+            <cv-employment class="cv-body-section" />
+          </div>
+        </main>
+      </Host>
+    );
   }
 }

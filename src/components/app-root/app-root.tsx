@@ -10,17 +10,25 @@ export class AppRoot {
     return (
       <div>
         <header class="home">
-          <stencil-route-link url="/">
-            <h1>deciduously.com</h1>
-          </stencil-route-link>
+          <nav>
+            <stencil-route-link url="/">
+              <a class="headerlink mainlink">deciduously.com</a>
+            </stencil-route-link>
+            <stencil-route-link url="/projects">
+              <a class="headerlink otherlink">Projects</a>
+            </stencil-route-link>
+            <stencil-route-link url="/cv">
+              <a class="headerlink otherlink">Resume</a>
+            </stencil-route-link>
+          </nav>
         </header>
 
         <stencil-router>
           <stencil-route-switch scrollTopOffset={0}>
-            <stencil-route url="/" component="app-home" exact={true} />
-            <stencil-route url="/blag" component="app-blag" />
+            <stencil-route url="/" component="app-blag" exact={true} />
             <stencil-route url="/cv" component="app-cv" />
             <stencil-route url="/post/:postId" component="app-post" />
+            <stencil-route url="/projects" component="app-projects" />
           </stencil-route-switch>
         </stencil-router>
       </div>

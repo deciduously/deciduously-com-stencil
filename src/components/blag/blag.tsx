@@ -1,4 +1,4 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, h } from '@stencil/core';
 import { blagPosts, BlagPosts } from '../../global/posts';
 
 @Component({
@@ -11,21 +11,27 @@ export class Blag {
   render() {
     if (this.blagPosts !== undefined) {
       return (
-        <Host>
-          <h1>Blag</h1>
-          {this.blagPosts
-            .allArticleTitles()
-            .reverse()
-            .map(([id, name]) => {
-              return (
-                <li>
-                  <stencil-route-link url={'/post/' + id}>
-                    {name}
-                  </stencil-route-link>
-                </li>
-              );
-            })}
-        </Host>
+        <main>
+          <cv-header />
+          <span class="blogheader">Blag</span>
+          <ul>
+            {this.blagPosts
+              .allArticles()
+              .reverse()
+              .map(({ id, title, date }) => {
+                return (
+                  <li>
+                    {id + '. '}
+                    <stencil-route-link url={'/post/' + id}>
+                      {title}
+                    </stencil-route-link>
+                    {' - '}
+                    <span class="blagdate">{date.toLocaleDateString()}</span>
+                  </li>
+                );
+              })}
+          </ul>
+        </main>
       );
     }
   }

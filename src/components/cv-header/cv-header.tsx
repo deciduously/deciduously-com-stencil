@@ -1,5 +1,5 @@
-import { Component, Prop, h } from '@stencil/core';
-import { Header } from '../../global/interfaces';
+import { Component, h } from '@stencil/core';
+import * as cvData from '../../assets/cv.json';
 
 @Component({
   tag: 'cv-header',
@@ -7,31 +7,27 @@ import { Header } from '../../global/interfaces';
   shadow: true
 })
 export class CvHeader {
-  /** Header data */
-  @Prop() header: Header;
   render() {
-    if (this.header !== undefined) {
-      return (
-        <section itemscope itemtype="https://schema.org/Person">
-          <span class="name">
-            <span itemprop="givenName">{this.header.firstName}</span>{' '}
-            <span itemprop="familyName">{this.header.lastName}</span>
-          </span>
-          <br />
-          <span itemprop="jobTitle" class="subtitle">
-            {this.header.subtitle}
-          </span>
-          <br />
-          <a href={'mailto:' + this.header.email} itemprop="email">
-            {this.header.email}
-          </a>
-          <div class="cv-links">
-            {this.header.links.map(l => (
-              <cv-link class="cv-link" link={l} />
-            ))}
-          </div>
-        </section>
-      );
-    }
+    return (
+      <section itemscope itemtype="https://schema.org/Person">
+        <span class="name">
+          <span itemprop="givenName">{cvData.header.firstName}</span>{' '}
+          <span itemprop="familyName">{cvData.header.lastName}</span>
+        </span>
+        <br />
+        <span itemprop="jobTitle" class="subtitle">
+          {cvData.header.subtitle}
+        </span>
+        <br />
+        <a href={'mailto:' + cvData.header.email} itemprop="email">
+          {cvData.header.email}
+        </a>
+        <div class="cv-links">
+          {cvData.header.links.map(l => (
+            <cv-link class="cv-link" link={l} />
+          ))}
+        </div>
+      </section>
+    );
   }
 }

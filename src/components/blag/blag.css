@@ -1,3 +1,7 @@
-:host {
-  display: block;
+ul {
+  @apply list-none;
+}
+
+.blogheader {
+  @apply text-lg font-semibold;
 }

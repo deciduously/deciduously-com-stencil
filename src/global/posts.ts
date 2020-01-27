@@ -8,7 +8,14 @@ export class BlagPosts {
     // Populate from articles.json
     this.__posts = [];
     for (const article of postData.posts) {
-      this.__posts.push({ id: this.numPosts, ...article });
+      this.__posts.push({
+        id: this.numPosts,
+        date: new Date(article.date),
+        cover_image: article.cover_image,
+        description: article.description,
+        markdown: article.markdown,
+        title: article.title
+      } as BlagPost);
     }
   }
   get numPosts(): number {
@@ -17,12 +24,8 @@ export class BlagPosts {
   get posts(): BlagPost[] {
     return this.__posts;
   }
-  allArticleTitles(): [number, string][] {
-    const ret = [];
-    this.posts.forEach(post => {
-      ret.push([post.id, post.title]);
-    });
-    return ret;
+  allArticles(): BlagPost[] {
+    return this.posts;
   }
   getPostByID(id: number): BlagPost | false {
     for (const p of this.posts) {
@@ -35,7 +38,7 @@ export class BlagPosts {
 export const blagPosts = new BlagPosts();
 
 export const notFound: BlagPost = {
-  date: 'NOPE',
+  date: new Date(),
   description: 'Nothing here, bud.',
   id: -99,
   markdown: '## You should try another link',

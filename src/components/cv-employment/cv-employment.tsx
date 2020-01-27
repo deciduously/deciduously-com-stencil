@@ -1,5 +1,6 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, h } from '@stencil/core';
 import { Employment } from '../../global/interfaces';
+import * as cvData from '../../assets/cv.json';
 
 // TODO Schema.org
 
@@ -9,8 +10,6 @@ import { Employment } from '../../global/interfaces';
   shadow: true
 })
 export class CvEmployment {
-  /** Employment array  */
-  @Prop() employment: Employment[];
   private endDate(e: Employment) {
     if (e.current) {
       return <span class="current-employment">current</span>;
@@ -19,31 +18,29 @@ export class CvEmployment {
     }
   }
   render() {
-    if (this.employment !== undefined) {
-      return (
-        <cv-section name="Employment">
-          {this.employment.map(e => {
-            return (
-              <section>
-                <span class="title">{e.title}</span>
-                <br />
-                <span class="employer">{e.employer}</span>{' '}
-                <div class="address">
-                  <cv-address address={e.address} />
-                </div>
-                <br />
-                <cv-monthyear date={e.beginDate} /> - {this.endDate(e)}
-                <br />
-                <ul>
-                  {e.bullets.map(b => {
-                    return <li class="emp-bullet">{b}</li>;
-                  })}
-                </ul>
-              </section>
-            );
-          })}
-        </cv-section>
-      );
-    }
+    return (
+      <cv-section name="Employment">
+        {cvData.employment.map(e => {
+          return (
+            <section>
+              <span class="title">{e.title}</span>
+              <br />
+              <span class="employer">{e.employer}</span>{' '}
+              <div class="address">
+                <cv-address address={e.address} />
+              </div>
+              <br />
+              <cv-monthyear date={e.beginDate} /> - {this.endDate(e)}
+              <br />
+              <ul>
+                {e.bullets.map(b => {
+                  return <li class="emp-bullet">{b}</li>;
+                })}
+              </ul>
+            </section>
+          );
+        })}
+      </cv-section>
+    );
   }
 }

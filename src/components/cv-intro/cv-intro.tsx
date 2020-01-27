@@ -1,5 +1,5 @@
-import { Component, Prop, h } from '@stencil/core';
-import { Intro } from '../../global/interfaces';
+import { Component, h } from '@stencil/core';
+import * as cvData from '../../assets/cv.json';
 
 @Component({
   tag: 'cv-intro',
@@ -7,23 +7,19 @@ import { Intro } from '../../global/interfaces';
   shadow: true
 })
 export class CvIntro {
-  /** Intro object */
-  @Prop() intro: Intro;
   render() {
-    if (this.intro !== undefined) {
-      return (
-        <section id="cv-intro">
-          <span class="one-liner">{this.intro.oneLiner}</span>
-          <p>
-            <span class="intro-heading">About</span>
-            <p class="intro-section">{this.intro.about}</p>
-            <span class="intro-heading">Skills</span>
-            <p class="intro-section">{this.intro.skills}</p>
-            <span class="intro-heading">Techs</span>
-            <p class="intro-section">{this.intro.techs}</p>
-          </p>
-        </section>
-      );
-    }
+    return (
+      <section id="cv-intro">
+        <span class="one-liner">{cvData.intro.oneLiner}</span>
+        <p>
+          <span class="intro-heading">About</span>
+          <p class="intro-section">{cvData.intro.about}</p>
+          <span class="intro-heading">Skills</span>
+          <p class="intro-section">{cvData.intro.skills}</p>
+          <span class="intro-heading">Techs</span>
+          <p class="intro-section">{cvData.intro.techs}</p>
+        </p>
+      </section>
+    );
   }
 }

@@ -1,5 +1,5 @@
-import { Component, Prop, h } from '@stencil/core';
-import { Project } from '../../global/interfaces';
+import { Component, h } from '@stencil/core';
+import * as cvData from '../../assets/cv.json';
 
 @Component({
   tag: 'cv-projects',
@@ -7,13 +7,11 @@ import { Project } from '../../global/interfaces';
   shadow: true
 })
 export class CvProjects {
-  /** Projects list */
-  @Prop() projects: Project[];
   render() {
-    if (this.projects !== undefined) {
+    if (cvData.projects !== undefined) {
       return (
         <cv-section name="Projects">
-          {this.projects.map(p => {
+          {cvData.projects.map(p => {
             return (
               <section class="project">
                 <p>

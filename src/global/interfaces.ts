@@ -1,6 +1,6 @@
 export interface BlagPost {
   cover_image?: string;
-  date: string;
+  date: Date;
   description: string;
   id: number;
   markdown: string;
