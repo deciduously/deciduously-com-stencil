@@ -23,6 +23,7 @@ From the ashes, it rises... a deciduously-com for 2020 and beyond.
 ### Content Management
 
 - [Showdown](http://showdownjs.com/)
+- [PrintJS](https://printjs.crabbly.com/)
 
 ### Language Tooling
 
