@@ -1,6 +1,6 @@
 import { Component, h } from '@stencil/core';
 import { Employment } from '../../global/interfaces';
-import * as cvData from '../../assets/cv.json';
+import * as cvData from '../../global/cv.json';
 
 // TODO Schema.org
 

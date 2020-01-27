@@ -1,6 +1,6 @@
 // All logic for scraping posts
 import { BlagPost } from './interfaces';
-import * as postData from '../assets/articles.json';
+import * as postData from './articles.json';
 
 export class BlagPosts {
   private __posts: BlagPost[];
@@ -14,8 +14,9 @@ export class BlagPosts {
         cover_image: article.cover_image,
         description: article.description,
         markdown: article.markdown,
-        title: article.title
-      } as BlagPost);
+        title: article.title,
+        tags: article.tags
+      });
     }
   }
   get numPosts(): number {

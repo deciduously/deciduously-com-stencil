@@ -1,5 +1,5 @@
 import { Component, Host, h } from '@stencil/core';
-import * as cvData from '../../assets/cv.json';
+import * as cvData from '../../global/cv.json';
 
 // TODO ability to toggle on/off Address
 // TODO different "modes"?

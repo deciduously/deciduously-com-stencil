@@ -1,5 +1,5 @@
 import { Component, h } from '@stencil/core';
-import * as cvData from '../../assets/cv.json';
+import * as cvData from '../../global/cv.json';
 
 @Component({
   tag: 'cv-intro',
