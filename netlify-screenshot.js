@@ -10,7 +10,7 @@ const puppeteer = require('puppeteer');
   await page.screenshot({
     path: 'cv.png',
     printBackground: true,
-    clip: { x: 132.28125, y: 145.015625, width: 816.375, height: 1054.484375 }
+    clip: { x: 132.28125, y: 145.015625, width: 816.375, height: 1656 }
   });
 
   await browser.close();
