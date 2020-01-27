@@ -6,7 +6,7 @@ import { Address } from '../../global/interfaces';
 @Component({
   tag: 'cv-address',
   styleUrl: 'cv-address.css',
-  shadow: false
+  shadow: true
 })
 export class CvAddress {
   /** Address object */

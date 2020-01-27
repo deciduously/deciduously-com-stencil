@@ -4,7 +4,7 @@ import { Header } from '../../global/interfaces';
 @Component({
   tag: 'cv-header',
   styleUrl: 'cv-header.css',
-  shadow: false
+  shadow: true
 })
 export class CvHeader {
   /** Header data */

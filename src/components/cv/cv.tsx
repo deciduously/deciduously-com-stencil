@@ -10,7 +10,7 @@ import * as cvData from '../../assets/cv.json';
 @Component({
   tag: 'app-cv',
   styleUrl: 'cv.css',
-  shadow: false
+  shadow: true
 })
 export class Cv {
   /** Resume data object */

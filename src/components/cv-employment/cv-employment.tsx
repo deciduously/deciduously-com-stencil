@@ -6,7 +6,7 @@ import { Employment } from '../../global/interfaces';
 @Component({
   tag: 'cv-employment',
   styleUrl: 'cv-employment.css',
-  shadow: false
+  shadow: true
 })
 export class CvEmployment {
   /** Employment array  */

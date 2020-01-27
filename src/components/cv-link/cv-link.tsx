@@ -5,7 +5,7 @@ import { CvImageLink } from '../../global/interfaces';
   assetsDir: 'images',
   tag: 'cv-link',
   styleUrl: 'cv-link.css',
-  shadow: false
+  shadow: true
 })
 export class CvLink {
   /** Link object with image URL */

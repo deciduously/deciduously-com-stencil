@@ -4,7 +4,7 @@ import { Intro } from '../../global/interfaces';
 @Component({
   tag: 'cv-intro',
   styleUrl: 'cv-intro.css',
-  shadow: false
+  shadow: true
 })
 export class CvIntro {
   /** Intro object */

@@ -4,7 +4,7 @@ import { Month, MonthYear } from '../../global/interfaces';
 @Component({
   tag: 'cv-monthyear',
   styleUrl: 'cv-monthyear.css',
-  shadow: false
+  shadow: true
 })
 export class CvMonthyear {
   /** Month and Year  */
