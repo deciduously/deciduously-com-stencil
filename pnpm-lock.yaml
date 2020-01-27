@@ -1,6 +1,7 @@
 dependencies:
   '@stencil/core': 1.8.6
   '@stencil/router': 1.0.1
+  highlight.js: 9.18.0
   showdown: 1.9.1
   tailwindcss: 1.1.4
 devDependencies:
@@ -9,6 +10,7 @@ devDependencies:
   '@stencil/postcss': 1.0.1_@stencil+core@1.8.6
   '@types/autoprefixer': 9.6.1
   '@types/cssnano': 4.0.0
+  '@types/highlight.js': 9.12.3
   '@types/jest': 24.0.25
   '@types/prettier': 1.19.0
   '@types/puppeteer': 1.20.3
@@ -464,6 +466,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-OCutwjDZ4aFS6PB1UZ988C4YgwlBHJd6wCeQqaLdmadZ/7e+w79+hbMUFC1QXDNCmdyoRfAFdm0RypzwR+Qpag==
+  /@types/highlight.js/9.12.3:
+    dev: true
+    resolution:
+      integrity: sha512-pGF/zvYOACZ/gLGWdQH8zSwteQS1epp68yRcVLJMgUck/MjEn/FBYmPub9pXT8C1e4a8YZfHo1CKyV8q1vKUnQ==
   /@types/istanbul-lib-coverage/2.0.1:
     dev: true
     resolution:
@@ -2468,6 +2474,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-l9sfDFsuqtOqKDsQdqrMRk0U85RZc0RtOR9yPI7mRVOa4FsR/BVnZ0shmQRM96Ji99kYZP/7hn1cedc1+ApsTQ==
+  /highlight.js/9.18.0:
+    dev: false
+    resolution:
+      integrity: sha512-A97kI1KAUzKoAiEoaGcf2O9YPS8nbDTCRFokaaeBhnqjQTvbAuAJrQMm21zw8s8xzaMtCQBtgbyGXLGxdxQyqQ==
   /hosted-git-info/2.8.5:
     dev: true
     resolution:
@@ -6474,6 +6484,7 @@ specifiers:
   '@stencil/router': ^1.0.1
   '@types/autoprefixer': ^9.6.1
   '@types/cssnano': ^4.0.0
+  '@types/highlight.js': ^9.12.3
   '@types/jest': 24.0.25
   '@types/prettier': ^1.19.0
   '@types/puppeteer': 1.20.3
@@ -6485,6 +6496,7 @@ specifiers:
   eslint: ^6.8.0
   eslint-config-prettier: ^6.9.0
   eslint-plugin-react: ^7.18.0
+  highlight.js: ^9.18.0
   jest: 24.9.0
   jest-cli: 24.9.0
   npm-run-all: ^4.1.5
