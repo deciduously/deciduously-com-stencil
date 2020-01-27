@@ -4,7 +4,7 @@ import { Project } from '../../global/interfaces';
 @Component({
   tag: 'cv-projects',
   styleUrl: 'cv-projects.css',
-  shadow: true
+  shadow: false
 })
 export class CvProjects {
   /** Projects list */

@@ -4,7 +4,7 @@ import { SchoolEntry } from '../../global/interfaces';
 @Component({
   tag: 'cv-education',
   styleUrl: 'cv-education.css',
-  shadow: true
+  shadow: false
 })
 export class CvEducation {
   /** Schools list */

@@ -15,16 +15,14 @@ export class AppRoot {
           </stencil-route-link>
         </header>
 
-        <main>
-          <stencil-router>
-            <stencil-route-switch scrollTopOffset={0}>
-              <stencil-route url="/" component="app-home" exact={true} />
-              <stencil-route url="/blag" component="app-blag" />
-              <stencil-route url="/cv" component="app-cv" />
-              <stencil-route url="/post/:postId" component="app-post" />
-            </stencil-route-switch>
-          </stencil-router>
-        </main>
+        <stencil-router>
+          <stencil-route-switch scrollTopOffset={0}>
+            <stencil-route url="/" component="app-home" exact={true} />
+            <stencil-route url="/blag" component="app-blag" />
+            <stencil-route url="/cv" component="app-cv" />
+            <stencil-route url="/post/:postId" component="app-post" />
+          </stencil-route-switch>
+        </stencil-router>
       </div>
     );
   }

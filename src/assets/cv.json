@@ -7,17 +7,17 @@
     "links": [
       {
         "name": "GitHub",
-        "imageUrl": "assets/images/github.png",
+        "imageUrl": "github.png",
         "target": "https://github.com/deciduously"
       },
       {
         "name": "DEV.to",
-        "imageUrl": "assets/images/dev-badge.svg",
+        "imageUrl": "dev-badge.svg",
         "target": "https://dev.to/deciduously"
       },
       {
         "name": "LinkedIn",
-        "imageUrl": "assets/images/768px-Linkedin_icon.svg.png",
+        "imageUrl": "32px-Linkedin_icon.svg.png",
         "target": "https://www.linkedin.com/in/benlovy/"
       }
     ]

@@ -1,10 +1,11 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Prop, getAssetPath, h } from '@stencil/core';
 import { CvImageLink } from '../../global/interfaces';
 
 @Component({
+  assetsDir: 'images',
   tag: 'cv-link',
   styleUrl: 'cv-link.css',
-  shadow: true
+  shadow: false
 })
 export class CvLink {
   /** Link object with image URL */
@@ -17,7 +18,7 @@ export class CvLink {
         <figure>
           <a target="_blank" href={this.link.target}>
             <img
-              src={this.link.imageUrl}
+              src={getAssetPath(`./images/${this.link.imageUrl}`)}
               alt={this.link.name}
               height={this.imgDim}
               width={this.imgDim}
