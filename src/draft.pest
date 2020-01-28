@@ -1,0 +1,6 @@
+dash = { "-" }
+header_edge = { dash{3} ~ NEWLINE }
+body = { ANY* }
+option = { ASCII_ALPHA* ~ ": " ~ ASCII_ALPHA ~ NEWLINE }
+header = { header_edge ~ option* ~ header_edge }
+draft = { SOI ~ header ~ body ~ EOI }
