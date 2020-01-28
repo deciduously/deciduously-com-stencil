@@ -13,6 +13,7 @@ From the ashes, it rises... a deciduously-com for 2020 and beyond.
 - `start` - run dev server and watch for changes
 - `build` - build production bundle
 - `generate` - generate new Stencil component
+- `publish` - regenerate articles.json from drafts/
 
 ## Stack
 

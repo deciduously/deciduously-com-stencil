@@ -12,7 +12,8 @@
     "stylelint:fix": "stylelint --fix src/**/*.css",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
-    "generate": "stencil generate"
+    "generate": "stencil generate",
+    "publish": "cargo run --release"
   },
   "repository": {
     "type": "git",

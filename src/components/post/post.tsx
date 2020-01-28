@@ -22,7 +22,6 @@ export class Post {
       .shadowRoot.querySelector('app-post')
       .shadowRoot.querySelectorAll('pre code')
       .forEach(codeBlock => {
-        console.log(codeBlock.toString());
         hljs.highlightBlock(codeBlock);
       });
   }
