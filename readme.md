@@ -1,6 +1,6 @@
 # deciduously-com
 
-DEFUNCT: Development halted and moved to [deciduosuly-com](https://github.com/deciduously/deciduously-com).
+DEFUNCT: Development halted and moved to [deciduously-com](https://github.com/deciduously/deciduously-com).
 
 ## Usage
 
